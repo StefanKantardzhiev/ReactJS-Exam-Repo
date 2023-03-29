@@ -1,6 +1,6 @@
-/* html{
-    margin:0;
-} */
+body{
+    background-color: #000000;
+}
 
 .auth {
     width: 100px;
@@ -11,7 +11,7 @@ header,
 footer {
     background-color: #010101;
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
     color: white;
 }
 
@@ -21,6 +21,7 @@ footer {
 }
 
 header {
+    margin: 0;
     position: relative;
     padding: 20px;
 }
