@@ -1,11 +1,15 @@
 #root{
     margin:0;
 }
+
+#main-content{
+    margin-top: 50px;
+}
 #welcome-world {
     background-image: linear-gradient(rgb(0, 0, 0), rgb(87, 86, 86));
     width: auto;
     padding-right: 30px;
-    padding-top: 5em;
+    padding-top: 2em;
     box-sizing: border-box;
     text-align: center;
 }
