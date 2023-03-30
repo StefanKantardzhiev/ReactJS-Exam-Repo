@@ -3,7 +3,7 @@ const expressConfig = require('./config/express');
 const databaseConfig = require('./config/database');
 const routesConfig = require('./config/routes');
 
-
+// npm i mongoose bcrypt express express-handlebars cookie-parser jsonwebtoken 
 start();
 
 async function start() {
@@ -13,5 +13,5 @@ async function start() {
     await databaseConfig(app);
     routesConfig(app);
 
-    app.listen(3000, () => console.log('Server listening on port 3000'));
+    app.listen(3030, () => console.log('Server listening on port 3030'));
 }

@@ -7,9 +7,9 @@ export const offerServiceFactory = (token) => {
 
     const getAll = async () => {
         const result = await request.get(baseUrl);
-        const games = Object.values(result);
+        const offers = Object.values(result);
     
-        return games;
+        return offers;
     };
     
     const getOne = async (gameId) => {
@@ -28,7 +28,7 @@ export const offerServiceFactory = (token) => {
     
     const edit = (gameId, data) => request.put(`${baseUrl}/${gameId}`, data);
 
-    const deleteGame = (gameId) => request.delete(`${baseUrl}/${gameId}`);
+    const deleteOffer = (gameId) => request.delete(`${baseUrl}/${gameId}`);
 
 
     return {
@@ -36,6 +36,6 @@ export const offerServiceFactory = (token) => {
         getOne,
         create,
         edit,
-        delete: deleteGame,
+        delete: deleteOffer,
     };
 }
