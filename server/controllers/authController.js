@@ -12,7 +12,7 @@ authController.get('/register', (req, res) => {
 
 authController.post('/register', async (req, res) => {
     try {
-        // console.log(req.body);
+        console.log(req.body);
         if (req.body.username == '' || req.body.password == '') {
             throw new Error('All fields are required');
         }
@@ -23,7 +23,7 @@ authController.post('/register', async (req, res) => {
         res.cookie('token', token);
         res.redirect('/'); //TODO check asignment routing
     } catch (error) {
-        // console.log(error);              // reveal if needed
+        console.log(error);              // reveal if needed
         const errors = parseError(error); //split error
         //TODO add actual error display
         res.render('register', {  // render page + error

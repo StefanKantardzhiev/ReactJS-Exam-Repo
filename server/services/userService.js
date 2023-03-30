@@ -1,5 +1,5 @@
 const User = require('../models/User');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken');
 
 const JWT_SECRET = 'The most secret secret';
@@ -10,10 +10,13 @@ async function register(username, password) {
     if (existing) {
         throw new Error('Username is taken');
     }
+    // if (password != repass) {
+    //     throw new Error('Passwords don`t match!')
+    // }
     const hashedPassword = await bcrypt.hash(password, 10); // salt as second param
     const user = await User.create({
         username,
-        hashedPassword
+        hashedPassword,
     });
     //TODO check if registration creates user session
     return createSession(user);
