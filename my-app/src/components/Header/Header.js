@@ -10,11 +10,11 @@ export const Header = () => {
         <header>
             <h1><a href='/' className="home" to="/">GermanMechanics.de</a></h1>
             <nav>
-                <a href='/catalog'>All Offers</a>
+                <a href='/offers'>All Offers</a>
                 {/* {isAuthenticated && ( */}
                 <div id="user">
                     <span>email</span>
-                    <a href="/create-game">Create Offer</a>
+                    <a href="/create-offer">Create Offer</a>
                     <a href="/logout">Logout</a>
                 </div>
                 {/* )} */}

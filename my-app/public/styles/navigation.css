@@ -11,8 +11,9 @@ header,
 footer {
     background-color: #010101;
     width: 100%;
-    /* overflow: hidden; */
+    overflow: hidden;
     color: white;
+    position: fixed;
 }
 
 .home {

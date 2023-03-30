@@ -7,8 +7,8 @@ export const Register = () => {
                 <div className="brand-logo"></div>
                 <h1>Register</h1>
 
-                <label htmlFor="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="maria@email.com" />
+                <label htmlFor="text">Nickname:</label>
+                <input type="text" id="email" name="email" placeholder="NickName" />
 
                 <label htmlFor="pass">Password:</label>
                 <input type="password" name="password" id="register-password" />
