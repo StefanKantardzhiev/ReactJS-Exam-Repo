@@ -12,6 +12,7 @@ import { Login } from "./components/Login/Login";
 import { Register } from "./components/Register/Register";
 import { offerServiceFactory } from './services/offerService';
 import { Offer } from './components/Offer/Offer';
+import { Latest } from './components/Latest/Latest';
 
 
 
@@ -54,7 +55,7 @@ function App() {
         <Route path='/auth/login' element={<Login />} />
         <Route path='/auth/register' element={<Register />} />
         <Route path='/offers' element={<Offer offers={offers} />} />
-        {/* <Route path='/photos/create' element={<AddOffer />} /> */}
+        <Route path='/offers/latest' element={<Latest offers={offers} />} />
       </Routes>
     </AuthContext.Provider>
   );

@@ -1,35 +1,43 @@
-#root{
-    margin:0;
+#root {
+    margin: 0;
 }
 
-#main-content{
-    margin-top:250px;
+#main-content {
+    margin-top: 250px;
 }
+
+#background-video {
+    display: block;
+    height: 130vh;
+    width: 100vw;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
 #welcome-world {
-    background-image: linear-gradient(rgb(0, 0, 0), rgb(87, 86, 86));
+    background-size: cover;
     width: auto;
-    padding-top: 17em;
+    padding-top: 10em;
     box-sizing: border-box;
     text-align: center;
 }
 
 #welcome-world .welcome-message {
+    margin-top:80px;
     display: inline-block;
-    top: 40%;
     text-align: center;
-    width: 40%;
-}
-
-#welcome-world>img {
-    height: auto;
-    display: inline-block;
-    vertical-align: right;
-    max-width: 33%;
+    width: 80%;
 }
 
 .welcome-message h2 {
-    color: #ffffff;
-    font-size: 80px;
+    color: #eee;
+    text-shadow: #000000 5px 0 10px;
+    font-size: 100px;
     line-height: 1.5;
     font-weight: 700;
     /* text-transform: uppercase; */
@@ -38,12 +46,12 @@
 }
 
 .welcome-message h3 {
-    color: #ffffff;
-    font-size: 250%;
+    color: #eee;
+    text-shadow: #000000 5px 0 10px;
+    font-size: 300%;
     font-weight: 500;
     text-align: center;
     font-weight: 500;
-    text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3);
     font-family: "Agency FB";
 }
 

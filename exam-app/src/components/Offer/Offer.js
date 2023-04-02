@@ -1,4 +1,4 @@
-import { OfferItem } from "./OfferItem/OfferItem";
+import { OfferItem } from "./OfferItem/OfferItem"
 
 export const Offer = ({
     offers,

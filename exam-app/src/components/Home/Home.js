@@ -6,22 +6,16 @@ export const Home = ({
 
     return (
         <section id="welcome-world">
-
+          <video id="background-video" autoPlay muted src="https://www.shutterstock.com/shutterstock/videos/1088921045/preview/stock-footage-asian-automotive-mechanic-repairman-handshake-with-client-in-garage-vehicle-service-manager.webm" type="video/mp4">
+            </video>
             <div className="welcome-message">
+            
                 <h2>Welcome to GermanMechanics.de</h2>
                 <h3>The place where you can offer your skills!</h3>
             </div>
-            <img src="./images/pngegg.png" alt="hero" />
-            <div id="home-page">
-                <h1>Latest Offers</h1>
-               
-                        {offers.map(x =>
-                            <OfferItem key={x._id} {...x} />
-                        )}
-                        {offers.length === 0 && (
-                            <h3 className="no-articles">No offers yet</h3>
-                        )}
-                    </div>
+            {/* <img src="./images/pngegg.png" alt="hero" />\ */}
+            
+            
         </section>
     );
 }
