@@ -1,31 +1,34 @@
-import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-// import { AuthContext } from '../../contexts/AuthContext';
+
+import { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthContext';
 
 export const Header = () => {
-    // const { isAuthenticated, userEmail } = useContext(AuthContext);
+    const { user, onLogoutHandler } = useContext(AuthContext);
 
     return (
         <header>
-            <h1><Link className="home" to="/">GamesPlay</Link></h1>
+            <h1><Link className="home" to="/">GermanMechanics</Link></h1>
             <nav>
-                <Link to="/catalog">All games</Link>
-                {/* {isAuthenticated && ( */}
+                
+                {(user != null)
+                    ?
                     <div id="user">
-                        <span>email</span>
-                        <Link to="/create-game">Create Game</Link>
-                        <Link to="/logout">Logout</Link>
+                        <span>Hello {user.email} !</span>
+                        <Link to="/offers">All offers</Link>
+                        <Link to="/create-offer">Create Offer</Link>
+                        <Link to="/" onClick={onLogoutHandler}>Logout</Link>
                     </div>
-                {/* )} */}
 
-                {/* {!isAuthenticated && ( */}
+                    :
+
                     <div id="guest">
                         <Link to="/auth/login">Login</Link>
-                        <Link to="/register">Register</Link>
+                        <Link to="/auth/register">Register</Link>
                     </div>
-                {/* )} */}
-            </nav>
+
+                }</nav>
         </header>
-    );
-};
+    )
+}

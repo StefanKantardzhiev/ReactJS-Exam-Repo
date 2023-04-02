@@ -1,4 +1,4 @@
-const { getPhotosByOwner } = require('../services/photoService');
+const { getOffersByOwner } = require('../services/offerService');
 const { register, login } = require('../services/userService');
 
 
@@ -35,11 +35,11 @@ authController.get('/logout', (req, res) => {
     res.status(204).end();
 });
 
-// get photos by owner
+// get offers by owner
 
 authController.get('/profile', async (req, res) => {
     const _id = req?.user?._id;
-    const cars = await getPhotosByOwner(_id)
+    const cars = await getOffersByOwner(_id)
     res.status(200).json(cars)
     res.end()
 });

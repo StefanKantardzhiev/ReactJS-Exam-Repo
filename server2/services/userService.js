@@ -24,35 +24,35 @@ const createAccessToken = (user) => {
     };
 }
 const register = async (email, password) => {
-    const existingEmail = await User.findOne({email})
-    
+    const existingEmail = await User.findOne({ email })
 
-    if(existingEmail){
+
+    if (existingEmail) {
         throw new Error('Email already exists!')
     }
 
-    const user = await User.create({email, password})
+    const user = await User.create({ email, password })
     return createAccessToken(user)
 }
 const login = async (email, password) => {
-    const user = await User.findOne({email});
-    if(!user){
+    const user = await User.findOne({ email });
+    if (!user) {
         throw new Error('Invalid email or password!')
     }
     const isUser = await bcrypt.compare(password, user.password)
-    if(isUser){
+    if (isUser) {
         return createAccessToken(user)
-    }else {
+    } else {
         throw new Error('Invalid email or password!')
     }
 }
 
-const updateUserPhotos = async (_id, photoId) => {
+const updateUserOffers = async (_id, offerId) => {
     try {
         const user = await User.findById(_id);
-        let photoArray = user.photos
-        photoArray.push(photoId)
-        await User.findByIdAndUpdate(_id, {photos: photoArray})
+        let offerArray = user.offers
+        offerArray.push(offerId)
+        await User.findByIdAndUpdate(_id, { offers: offerArray })
     } catch (error) {
         throw new Error(error)
     }
@@ -66,5 +66,5 @@ module.exports = {
     register,
     createAccessToken,
     validateToken,
-    updateUserPhotos
+    updateUserOffers
 }

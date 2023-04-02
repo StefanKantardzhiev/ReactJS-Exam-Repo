@@ -11,10 +11,16 @@ const userSchema = new mongoose.Schema({
         minlength: [6, 'Password should have at least 5 characters!'],
         maxlength: [12, 'Password cannot have more than 12 characters!'],
     },
-    photos: [
+    offers: [
         {
             type: mongoose.Types.ObjectId,
-            ref: 'Photo',
+            ref: 'Offer',
+        }
+    ],
+    comments: [
+        {
+            type: mongoose.Types.ObjectId,
+            ref: 'Offer',
         }
     ]
 })

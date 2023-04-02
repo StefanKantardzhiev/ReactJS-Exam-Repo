@@ -1,22 +1,24 @@
 // import { Link } from "react-router-dom";
 
-export const HomeItem = ({
-    _id,
-    title,
+export const OfferItem = ({
     imageUrl,
+    title,
     city,
+    price
 }) => {
     return (
-        <div className="game" >
+        <div className="offer" >
             <div className="image-wrap">
                 <img src={imageUrl} />
             </div>
-            <h3>{title}</h3>
+            <h1>{title}</h1>
             <div className="rating">
                 <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
             </div>
+            <h2>{price} EUR</h2>
+            <h3>{city}</h3>
             <div className="data-buttons">
-                <a href='/catalog/${_id}' className="data-buttons">Details</a>
+                <a href='/offers/${_id}' className="data-buttons">Details</a>
             </div>
         </div>
     )

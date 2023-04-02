@@ -6,6 +6,7 @@
     padding: 20px;
     height: auto;
     width: 900px;
+    text-align: center;
 }
 
 #catalog-page>h1 {
@@ -15,10 +16,10 @@
     font-weight: 700;
     margin-top: 10px;
     text-transform: uppercase;
-    text-align: center;
+    
 }
 
-.allGames {
+.allOffers {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
@@ -27,17 +28,17 @@
     margin: 15px;
     overflow: hidden;
     width: 600px auto;
-    min-height: 210px;
+    min-height: 250px;
     height: auto;
 }
 
-.allGames-info {
+.allOffers-info {
     padding: 30px;
     position: relative;
     width: 100%;
 }
 
-.allGames-info>img {
+.allOffers-info>img {
     margin-top: -10px;
     border-radius: 50%;
     height: 140px;
@@ -49,13 +50,15 @@
     width: 140px;
 }
 
-.allGames-info>h6 {
+.allOffers-info>h6 {
     font-size: 20px;
     font-weight: 750;
     color: #161618;
 }
 
-.allGames-info>h2 {
+
+
+.allOffers-info>h2 {
     font-size: 20px;
     font-weight: 750;
     color: #161618;
@@ -66,11 +69,10 @@
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
     color: #fff;
     font-size: 20px;
-    position: absolute;
-    bottom: 30px;
-    text-align: left;
+    display: inline-block;
+    /* bottom: 10px; */
     letter-spacing: 1px;
-    padding: 10px;
-    margin-top: auto;
-    margin-left: 20px;
+    padding: 8px;
+    margin-top: 120px;
+    /* margin-left: 20px; */
 }
