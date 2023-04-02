@@ -3,13 +3,12 @@
 }
 
 #main-content{
-    margin-top: 50px;
+    margin-top:250px;
 }
 #welcome-world {
     background-image: linear-gradient(rgb(0, 0, 0), rgb(87, 86, 86));
     width: auto;
-    padding-right: 30px;
-    padding-top: 2em;
+    padding-top: 17em;
     box-sizing: border-box;
     text-align: center;
 }
@@ -25,7 +24,7 @@
     height: auto;
     display: inline-block;
     vertical-align: right;
-    max-width: 45%;
+    max-width: 33%;
 }
 
 .welcome-message h2 {
@@ -50,7 +49,6 @@
 
 #welcome-world>#home-page {
     margin-top: 20rem;
-    width: 100%;
     text-align: center;
 }
 
@@ -74,7 +72,7 @@
     border-radius: 15px;
     float: left;
     height: auto;
-    color: rgb(204, 144, 131);
+    color: #fff;
 }
 
 .image-wrap {
@@ -150,7 +148,7 @@
 }
 
 #home-page>h1 {
-    color: rgb(252, 168, 151);
+    color: #fff;
     text-align: center;
     font-weight: 700;
     font-size: 84px;

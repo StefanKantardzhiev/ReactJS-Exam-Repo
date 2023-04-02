@@ -34,7 +34,7 @@ offerController.get('/most-expensive', async (req, res) => {
 });
 
 //get most recent offers
-offerController.get('/most-recent', async (req, res) => {
+offerController.get('/recent', async (req, res) => {
     const offers = await getRecent()
     res.status(200).json(offers);
 })

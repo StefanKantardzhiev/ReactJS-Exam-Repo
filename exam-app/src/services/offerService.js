@@ -6,7 +6,7 @@ export const offerServiceFactory = (token) => {
     const request = requestFactory(token);
 
     const getAll = async () => {
-        const result = await request.get(baseUrl);
+        const result = await request.get(`${baseUrl}/recent`);
         const offers = Object.values(result);
     
         return offers;
