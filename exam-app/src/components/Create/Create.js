@@ -1,6 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
-import { AuthContext } from '../../contexts/AuthContext';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 import { offerServiceFactory } from '../../services/offerService'

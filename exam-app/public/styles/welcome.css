@@ -1,5 +1,5 @@
 #root {
-    margin: 0;
+   margin:0;     
 }
 
 #main-content {
@@ -8,8 +8,8 @@
 
 #background-video {
     display: block;
-    height: 130vh;
-    width: 100vw;
+    height: 100vh;
+    width: 100%;
     object-fit: cover;
     position: fixed;
     left: 0;
@@ -19,48 +19,67 @@
     z-index: -1;
 }
 
-#welcome-world {
-    background-size: cover;
-    width: auto;
-    padding-top: 10em;
-    box-sizing: border-box;
-    text-align: center;
-}
-
 #welcome-world .welcome-message {
-    margin-top:80px;
-    display: inline-block;
-    text-align: center;
-    width: 80%;
+    /* text-align: center; */
+    width: 100%;
+    animation: expand 1.25s ease-in-out forwards;
 }
 
 .welcome-message h2 {
+    position: fixed;
+    top: 20rem;
+    left: 15rem;
     color: #eee;
     text-shadow: #000000 5px 0 10px;
     font-size: 100px;
-    line-height: 1.5;
+    line-height: 1;
     font-weight: 700;
     /* text-transform: uppercase; */
     text-shadow: inline 0 2px 4.8px rgba(0, 0, 0, 0.3);
-    font-family: "Agency FB";
+    font-family:monospace;
 }
 
 .welcome-message h3 {
+    font-style: italic;
+    position: fixed;
+    top: 30rem;
+    left: 30rem;
     color: #eee;
-    text-shadow: #000000 5px 0 10px;
+    text-shadow: #000000 0px 0px 10px;
     font-size: 300%;
     font-weight: 500;
     text-align: center;
-    font-weight: 500;
     font-family: "Agency FB";
+    transition: ease-in-out;
 }
 
-#welcome-world>#home-page {
-    margin-top: 20rem;
-    text-align: center;
+.image-home {
+    position: fixed;
+    top: 25rem;
+    right: 30rem;
+    background-image: url("../images/mechanic.png");
+    width: 400px;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
 }
 
-#home-page {
+.image-header {
+    position: fixed;
+    top: 1em;
+    left: 2rem;
+    background-image: url("../images/mechanic.png");
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+}
+
+/* #home-page {
     background-color: transparent;
     box-shadow: 0px 0px 40px 0px;
     overflow: hidden;
@@ -68,7 +87,7 @@
     padding: 20px;
     height: auto;
     width: auto;
-}
+} */
 
 .offer {
     box-shadow: 0px 0px 30px 0px;
@@ -118,38 +137,6 @@
     line-height: normal;
 }
 
-.rating {
-    unicode-bidi: bidi-override;
-    text-align: center;
-    direction: rtl;
-}
-
-.rating span {
-    font-size: 40px;
-    padding: 4px;
-}
-
-.rating span:before {
-    content: "\2605";
-    position: absolute;
-    color: gold;
-}
-
-.details-btn {
-    background-color: #fd5454;
-    font-size: 1.4rem;
-    padding-top: 20px;
-    margin-top: 10px;
-    color: white;
-    padding: 0.9em 1.4em;
-}
-
-.data-buttons {
-    font-size: 1.4rem;
-    padding-top: 20px;
-    text-align: center;
-}
-
 .btn.details-btn:hover {
     background-color: rgb(192, 129, 117);
     color: white;
@@ -169,4 +156,35 @@
     font-weight: 700;
     font-size: 60px;
     font-family: "Agency FB";
+}
+
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(500px) scale(.2);
+    }
+
+    100% {
+        transform: translateX(0px) scale(1);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(300px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes expand {
+    0% {
+        transform: translateX(1400px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
 }

@@ -9,41 +9,23 @@ body{
 
 header,
 footer {
-    background-color: #010101;
+    margin: 0;
+    position:fixed;
+    background-color:transparent;
     width: 100%;
     overflow: hidden;
     color: white;
-    position: fixed;
-}
-
-.home {
-    font-size: auto;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-header {
-    margin: 0;
-    position: relative;
-    padding: 20px;
-}
-
-header h2 {
-    display: inline-block;
-    background-color: #000000;
-    color: white;
-    margin-bottom: auto;
+    text-shadow: 10px 0px 30px  #000000 ;
+    right: 2em;
 }
 
 header nav {
-    font-size: 22px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    position: absolute;
-    right: 0;
-    bottom: 25px;
+    font-size: 25px;
+    font-family:monospace;    
 }
 
 header nav>* {
-    float: left;
+    float: right;
 }
 
 footer {
@@ -59,7 +41,7 @@ nav a {
 }
 
 nav a:hover {
-    cursor:col-resize;
+    cursor:grabbing;
     color: rgb(255, 0, 0);
     font-weight: bolder;
 }

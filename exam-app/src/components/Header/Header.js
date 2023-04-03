@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom';
-
-
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 
@@ -9,7 +7,7 @@ export const Header = () => {
     console.log(user)
     return (
         <header>
-            <h1><Link className="home" to="/">GermanMechanics</Link></h1>
+           <Link to='/'><div className="image-header" ></div></Link>
             <nav>
 
                 {(user != null)
