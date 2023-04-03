@@ -47,9 +47,8 @@ export const Login = () => {
                         type="email"
                         id="email"
                         name="email"
-                        placeholder="Sokka@gmail.com"
+                        placeholder="example@abv.bg"
                         onChange={onChangeHandler}
-
                     />
 
                     <label htmlFor="login-pass">Password:</label>

@@ -9,9 +9,10 @@ const offerController = require('express').Router();
 //create Offer
 offerController.post('/create', async (req, res) => {
     const data = req.body;
-    console.log(data);
     try {
         const userId = req?.user?._id;
+            // console.log(data);
+
         const offer = await addOffer(data, userId)
         await updateUserOffers(userId, offer._id)
         res.status(201).json(offer)

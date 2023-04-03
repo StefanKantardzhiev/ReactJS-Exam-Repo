@@ -6,13 +6,13 @@ const authController = require('express').Router();
 
 // Register route
 authController.post('/register', async (req, res) => {
-    const { email, password } = req.body;
+    const { email, password, rePass } = req.body;
     try {
-        const user = await register( email, password);
+        const user = await register(email, password, rePass);
         res.status(201).json(user)
     } catch (error) {
         console.log(error)
-        res.status(400).json({error:error.message})
+        res.status(400).json({ error: error.message })
     }
     res.end()
 });
@@ -24,7 +24,7 @@ authController.post('/login', async (req, res) => {
         const user = await login(email, password)
         res.status(201).json(user)
     } catch (error) {
-        res.status(400).json({error:error.message})
+        res.status(400).json({ error: error.message })
     }
     res.end()
 });

@@ -10,16 +10,18 @@ export const OfferItem = ({
 }) => {
     return (
         <div className="allOffers">
-            <div className="allOffers-info">
+            <div className="allOffers-card">
                 <img src={imageUrl} />
-                <h6>{city}</h6>
-                <h2>{title}</h2>
-                <blockquote>"{description}"</blockquote>
+                <div id="card-info">
+                    <h6>{city}</h6>
+                    <h2>{title}</h2>
+                    <blockquote>"{description}"</blockquote>
+                </div>
                 <h1>Price: {price} EUR</h1>
-                <Link to={`/offer/${_id}/edit`} className="details-button">Edit</Link>
-                <Link to={`/offer/${_id}`} className="details-button">Details</Link>
+                <Link to={`/offer/${_id}/edit`} className="button">Edit</Link>
+                <Link to={`/offer/${_id}`} className="button">Details</Link>
             </div>
-            
+
         </div>
     );
 }

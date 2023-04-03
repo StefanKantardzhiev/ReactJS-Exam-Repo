@@ -1,70 +1,87 @@
 #catalog-page {
     background-color: transparent;
+    box-sizing: border-box;
     box-shadow: 0px 0px 40px 0px;
-    overflow: hidden;
     border-radius: 10px;
-    padding: 20px;
-    height: auto;
-    width: 900px;
+    width: 70%;
+    margin: auto;
+    overflow: hidden;
 }
 
-#catalog-page>h1 {
+#all-offers {
+    margin-top:30px;
+    width: 50%;
+    border: 1px solid white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 50px #ff0000;
+    color: white;
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+div.allOffers {
+    margin-top: 15px;
+    display: inline-grid;
+    grid-template-rows: auto auto auto;
+    
+}
+
+#all-offers>h1 {
     color: #fff;
     font-family: "Agency FB";
     font-size: 48px;
     font-weight: 700;
-    margin-top: 10px;
+    margin: 10px;
     text-transform: uppercase;
     text-align: center;
 }
 
-.allOffers {
-    background-color: #fff;
+.allOffers-card {
+   
     border-radius: 20px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-    display: block;
-    max-width: 50%;
-    margin: auto;
-    overflow: hidden;
-    width: 500px auto;
-    min-height: 250px;
-    height: auto;
-    margin-top:20px;
-}
-
-.allOffers-info {
+    box-shadow: 0px 0px 30px #ff0000;
+    background-color: #fff;
     text-align: center;
-    padding: 30px;
+    /* padding: 20px; */
     position: relative;
-    width: 100%;
+    height: 300px;
+    width: 500px;
+    margin: 10px;
 
 }
 
-.allOffers-info>img {
+.allOffers-card>img {
     border-radius: 50%;
     height: 100px;
     position: absolute;
     top: 15px;
-    right: 50px;
-    float: right;
+    right: 10px;
+    float: left;
     padding: 5px;
     width: 100px;
-    
+
 }
 
-.allOffers-info>h6 {
+#card-info {
+    margin:20px;
+    overflow: hidden;
+}
+
+#card-info>h6 {
+
     font-size: 20px;
     font-weight: 750;
     color: #161618;
 }
 
-.allOffers-info>h2 {
+#card-info>h2 {
     font-size: 30px;
     font-weight: 750;
     color: #161618;
 }
 
-.allOffers-info>h1 {
+#card-info>h1 {
     font-size: 35px;
     font-weight: 900;
     color: #161618;
@@ -72,9 +89,10 @@
 }
 
 
-.details-button {
+.button {
+    margin-top: 25px;
     background-color: #470000;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
     display: inline-block;
     color: #fff;
     font-size: 20px;
@@ -82,4 +100,9 @@
     text-align: left;
     letter-spacing: 1px;
     padding: 10px;
+}
+
+.button:hover{
+    background-color: #470000;
+    transform: scale(1.10);
 }

@@ -23,7 +23,6 @@ async function updateOffer(id, offer) {
     const existing = await Offer.findById(id);
 
     existing.title = offer.title;
-    // console.log(existing.title)
     existing.description = offer.description;
     existing.price = offer.price;
     existing.city = offer.city

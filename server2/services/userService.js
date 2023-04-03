@@ -23,9 +23,12 @@ const createAccessToken = (user) => {
         _id: user._id
     };
 }
-const register = async (email, password) => {
+const register = async (email, password, rePass) => {
     const existingEmail = await User.findOne({ email })
-
+    console.log(password,rePass)
+    if (password != rePass) {
+        throw new Error('Passwords dont match')
+    }
 
     if (existingEmail) {
         throw new Error('Email already exists!')

@@ -10,11 +10,13 @@ import { useLocalStorage } from '../../hooks/useLocalStorage';
 export const Register = () => {
     const [formData, setFormData] = useState({
         email: '',
-        password: ''
+        password: '',
+        rePass:''
     });
 
     const onChangeHandler = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
+        console.log(formData)
 
     };
     const { setUserData } = useContext(AuthContext);
@@ -48,7 +50,6 @@ export const Register = () => {
                         name="email"
                         placeholder="Sokka@gmail.com"
                         onChange={onChangeHandler}
-
                     />
 
                     <label htmlFor="register-pass">Password:</label>
@@ -58,9 +59,16 @@ export const Register = () => {
                         name="password"
                         onChange={onChangeHandler}
                     />
-                    <input type="submit" className="btn submit" value="Login" />
+                    <label htmlFor="register-pass">Re-Password:</label>
+                    <input
+                        type="password"
+                        id="rePass"
+                        name="rePass"
+                        onChange={onChangeHandler}
+                    />
+                    <input type="submit" className="btn submit" value="Register" />
                     <p className="field">
-                        <span>If you don't have profile click <Link to="/auth/register">here</Link></span>
+                        <span>If you don't have profile click <Link to="/Login">here</Link></span>
                     </p>
                 </div>
             </form>

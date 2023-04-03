@@ -13,13 +13,13 @@ const userSchema = new mongoose.Schema({
     },
     offers: [
         {
-            type: mongoose.Types.ObjectId,
+            type: Array,
             ref: 'Offer',
         }
     ],
     comments: [
         {
-            type: mongoose.Types.ObjectId,
+            type: Array,
             ref: 'Offer',
         }
     ]
