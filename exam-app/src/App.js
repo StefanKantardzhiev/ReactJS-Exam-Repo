@@ -61,16 +61,22 @@ function App() {
 
 
   return (
+
     <AuthContext.Provider value={{ user, offers, setUserData, onLogoutHandler }}>
+       
       <Header />
-      <Routes>
-        <Route path='/' element={<Home offers={offers} />} />
-        <Route path='/auth/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/offers' element={<Offer offers={offers} />} />
-        <Route path='/offers/latest' element={<Latest offers={recent} />} />
-        <Route path='/offers/create' element={<Create offers={offers} />} />
-      </Routes>
+      
+      <main id="main-content">
+        <Routes>
+          <Route path='/' element={<Home offers={offers} />} />
+          <Route path='/auth/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/offers' element={<Offer offers={offers} />} />
+          <Route path='/offers/latest' element={<Latest offers={recent} />} />
+          <Route path='/offers/create' element={<Create offers={offers} />} />
+        </Routes>
+      </main>
+
     </AuthContext.Provider>
   );
 }

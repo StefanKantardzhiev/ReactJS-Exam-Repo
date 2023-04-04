@@ -1,13 +1,5 @@
-#root {
-   margin:0;     
-}
-
-#main-content {
-    margin-top: 250px;
-}
-
 #background-video {
-    display: block;
+    display: none;
     height: 100vh;
     width: 100%;
     object-fit: cover;
@@ -16,47 +8,18 @@
     right: 0;
     top: 0;
     bottom: 0;
-    z-index: -1;
+    z-index: 0;
 }
 
 #welcome-world .welcome-message {
-    /* text-align: center; */
-    width: 100%;
+    width: 50%;
     animation: expand 1.25s ease-in-out forwards;
 }
 
-.welcome-message h2 {
-    position: fixed;
-    top: 20rem;
-    left: 15rem;
-    color: #eee;
-    text-shadow: #000000 5px 0 10px;
-    font-size: 100px;
-    line-height: 1;
-    font-weight: 700;
-    /* text-transform: uppercase; */
-    text-shadow: inline 0 2px 4.8px rgba(0, 0, 0, 0.3);
-    font-family:monospace;
-}
-
-.welcome-message h3 {
-    font-style: italic;
-    position: fixed;
-    top: 30rem;
-    left: 30rem;
-    color: #eee;
-    text-shadow: #000000 0px 0px 10px;
-    font-size: 300%;
-    font-weight: 500;
-    text-align: center;
-    font-family: "Agency FB";
-    transition: ease-in-out;
-}
-
 .image-home {
-    position: fixed;
-    top: 25rem;
-    right: 30rem;
+    position: relative;
+    top: 20rem;
+    left: 10em;
     background-image: url("../images/mechanic.png");
     width: 400px;
     height: 400px;
@@ -67,9 +30,7 @@
 }
 
 .image-header {
-    position: fixed;
-    top: 1em;
-    left: 2rem;
+    position: relative;
     background-image: url("../images/mechanic.png");
     width: 50px;
     height: 50px;

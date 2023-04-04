@@ -48,7 +48,7 @@ export const Register = () => {
                         type="email"
                         id="email"
                         name="email"
-                        placeholder="Sokka@gmail.com"
+                        placeholder="example@mail.bg"
                         onChange={onChangeHandler}
                     />
 

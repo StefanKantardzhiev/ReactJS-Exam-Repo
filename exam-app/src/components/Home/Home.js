@@ -5,13 +5,10 @@ export const Home = () => {
             <video id="background-video" autoPlay repeat preload muted src='../../images/mechanic2.mp4' type="video/mp4">
             </video>
             <div className="welcome-message">
-                <h3>The place where you can offer your skills!</h3>
                 <h2>GermanMechanics.de</h2>
-                <div className="image-home"></div>
-
+                <h3>The place where you can offer your skills!</h3>
             </div>
-
-
+            <div className="image-home"></div>
         </section>
     );
 }

@@ -1,53 +1,46 @@
-body{
-    background-color: #000000;
-}
-
-.auth {
-    width: 100px;
-    margin: 8em auto;
-}
-
-header,
-footer {
+body {
+    display: block;
     margin: 0;
-    position:fixed;
-    background-color:transparent;
-    width: 100%;
-    overflow: hidden;
+    background-color: black;
+    min-width: 670px;
+}
+
+#main-content{
+    margin-top: 5%;
+    color:white;
+}
+
+header{
+    width:100%;
+    top: 0;
+    padding: 20px;
+    background-color: black;
+    position: fixed;
+    text-align: center;
+    font-size: 30px;
+    font-family: monospace;
     color: white;
-    text-shadow: 10px 0px 30px  #000000 ;
-    right: 2em;
 }
 
-header nav {
-    font-size: 25px;
-    font-family:monospace;    
-}
 
-header nav>* {
-    float: right;
-}
-
-footer {
+/* footer {
     padding: 0.5em;
     width: 100%;
     position: absolute;
     left: 0;
     bottom: 0;
-}
+} */
 
 nav a {
+    color: whitesmoke;
+    text-decoration: none;
     margin: 0 0.5em;
 }
 
 nav a:hover {
-    cursor:grabbing;
+    cursor: grabbing;
     color: rgb(255, 0, 0);
     font-weight: bolder;
-}
-
-.home:hover {
-    color: rgb(82, 133, 139);
 }
 
 #user,

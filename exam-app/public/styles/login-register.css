@@ -6,7 +6,7 @@
     padding: 60px;
     box-sizing: border-box;
     background: #86000088;
-    box-shadow: 0px 0px 32px 0px #b7b7b788;
+    /* box-shadow: 0px 0px 32px 0px #b7b7b788; */
 }
 
 #register-page {
@@ -71,15 +71,6 @@ label:nth-of-type(2) {
 input::placeholder {
     color: rgba(184, 179, 179, 0.678);
 }
-
-;
-
-
-label[for="female"] {
-    margin-top: 10px;
-}
-
-input[type="nickname"],
 input[type="password"],
 input[type="number"],
 input[type="email"] {
@@ -93,9 +84,9 @@ input[type="email"] {
     box-shadow: inset 6px 6px 6px #c0c2c5, inset -6px -6px 6px white;
 }
 
-label[for="terms"]>input {
+/* label[for="terms"]>input {
     display: inline;
-}
+} */
 
 .btn.submit {
     margin-top: 30px;
