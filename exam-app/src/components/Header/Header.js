@@ -4,10 +4,9 @@ import { AuthContext } from '../../contexts/AuthContext';
 
 export const Header = () => {
     const { user, onLogoutHandler } = useContext(AuthContext);
-    console.log(user)
     return (
         <header>
-           <Link to='/'><div className="image-header" ></div></Link>
+            <Link to='/'><div className="image-header" ></div></Link>
             <nav>
 
                 {(user != null)
@@ -24,7 +23,7 @@ export const Header = () => {
                     <div id="guest">
                         <Link to="/offers/latest">Latest Offers</Link>
                         <Link to="/auth/login">Login</Link>
-                        <Link to="/register">Register</Link>
+                        <Link to="/auth/register">Register</Link>
                     </div>
 
                 }</nav>

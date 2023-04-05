@@ -60,7 +60,7 @@ export const Login = () => {
                     />
                     <input type="submit" className="btn submit" value="Login" />
                     <p className="field">
-                        <span>If you don't have profile click <Link to="/register">here</Link></span>
+                        <span>If you don't have profile click <Link to="/auth/register">here</Link></span>
                     </p>
                 </div>
             </form>

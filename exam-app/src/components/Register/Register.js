@@ -68,7 +68,7 @@ export const Register = () => {
                     />
                     <input type="submit" className="btn submit" value="Register" />
                     <p className="field">
-                        <span>If you don't have profile click <Link to="/Login">here</Link></span>
+                        <span>If you don't have profile click <Link to="/auth/login">here</Link></span>
                     </p>
                 </div>
             </form>

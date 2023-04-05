@@ -1,18 +1,21 @@
 import { OfferItem } from "../Offer/OfferItem/OfferItem"
 
 export const Latest = ({
-    offers
+    offers,
 }) => {
     return (
-        <section id="catalog-page">
-            <h1>Latest Offers</h1>
-            {offers.map(x =>
-                <OfferItem key={x._id} {...x} />
-            )}
+        <>
+            <h1 id='all-offers'>Latest Offers</h1>
+            <section id="catalog-page">
 
-            {offers.length === 0 && (
-                <h3 className="no-articles">No articles yet</h3>
-            )}
-        </section>
-    )
-}
+                {offers.map(x =>
+                    <OfferItem key={x._id} {...x} />
+                )}
+
+                {offers.length === 0 && (
+                    <h3 className="no-articles">No articles yet</h3>
+                )}
+            </section>
+        </>
+    );
+};

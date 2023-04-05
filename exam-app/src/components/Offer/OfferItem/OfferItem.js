@@ -16,8 +16,8 @@ export const OfferItem = ({
             
             <blockquote>"{description}"</blockquote>
             <h1>Price: {price} EUR</h1>
-            <Link to={`/offer/${_id}/edit`} className="button">Edit</Link>
-            <Link to={`/offer/${_id}`} className="button">Details</Link>
+            <Link to={`/offers/${_id}/edit`} className="button">Edit</Link>
+            <Link to={`/offers/${_id}`} className="button">Details</Link>
         </div>
     );
 }

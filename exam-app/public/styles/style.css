@@ -1,32 +1,19 @@
-html {
-    max-width: 1920px;
-    margin: 0;
-    font-family: monospace;
-}
-
 body {
-
     font-family: monospace;
-    min-width: 670px;
     background-color: black;
 }
 
 #main-content {
-    
     margin: auto;
-    margin-top: 5vh;
 }
 
 
 /* navigation */
 header {
-    top: 0;
     width: 100%;
     background-color: black;
-    position: fixed;
     font-size: 30px;
-    font-family: monospace;
-    color: white;
+    color: whitesmoke;
     text-align: right;
 }
 
@@ -67,21 +54,15 @@ nav a:hover {
 
 /* Welcome screen */
 
-#welcome-world{
+#welcome-world {
     display: block;
     padding-top: 10%;
 }
 
 #welcome-world .welcome-message {
-    color: white;
+    color: whitesmoke;
     width: 100%;
-    animation: expand 1.25s ease-in-out forwards;
-}
-
-.image-home {
-    width: 50%;
-    height: auto;
-    float: left;
+    animation: slideIn 1.5s ease-out backwards;
 }
 
 #background-video {
@@ -98,14 +79,12 @@ nav a:hover {
 
 .welcome-message {
     width: 100%;
-    display: block;
-    padding-left: 10%;
+    display: inline-block;
 }
 
-
-
 .welcome-message h2 {
-    color: rgba(210, 209, 209, 0.811);
+    padding-left: 10%;
+    color: whitesmoke;
     font-style: oblique;
     font-size: 100px;
     font-weight: 500;
@@ -117,20 +96,20 @@ nav a:hover {
 }
 
 .welcome-message h3 {
+    padding-left: 10%;
     font-style: oblique;
-    font-size: 45px;
+    font-size: 60px;
     font-weight: 800;
     transition: all 0.3s ease-out;
-    color: rgba(210, 209, 209, 0.811);
+    color: whitesmoke;
     text-shadow: rgb(64, 1, 1)3px 3px 15px;
 }
 
 
-
 .image-home {
     position: fixed;
-    right:50px ;
-    top:250px;
+    right: 50px;
+    top: 250px;
     background-image: url("../images/mechanic.png");
     width: 400px;
     height: 400px;
@@ -155,30 +134,25 @@ nav a:hover {
 /* Offers */
 #catalog-page {
     display: grid;
+    justify-content: space-evenly;
     background-color: black;
-    height: auto;
-    grid-template-columns: 460px 460px 460px 460px;
-    justify-content: space-between;
-    overflow: hidden;
+    grid-template-columns: 500px 500px 500px;
+    /* overflow: hidden; */
 }
 
 
 .allOffers {
-    display: inline-block;
     text-shadow: rgba(98, 98, 98, 0.47) 3px 3px 5px;
     border-radius: 20px;
     box-shadow: 0px 0px 30px #ff0000;
-    background-color: #fff;
+    background-color: whitesmoke;
     text-align: center;
-    padding: 30px 10px;
-    margin: 20px;
-    height: 400px;
-    height: 400px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 
 .allOffers>img {
+    padding: 10px 20px;
     float: right;
     border-radius: 20%;
     height: 100px;
@@ -188,51 +162,52 @@ nav a:hover {
 }
 
 h1#all-offers {
+    border: 2px solid #ff0000;
+    border-radius: 60px;
+    box-shadow: inset 0px 0px 20px 10px #ff0000;
+    margin: 50px auto;
+    width: 50%;
     text-align: center;
-    width: 100%;
     color: #fff;
     font-family: "Agency FB";
     font-size: 48px;
     font-weight: 700;
-    padding: 20px;
+    padding: 50px 0px;
     letter-spacing: 2px;
 }
 
 
 
 .allOffers blockquote {
+    margin: auto;
+    width: 80%;
     font-size: 20px;
     font-style: italic;
     font-weight: 400;
+    padding: 10px;
+}
+
+.allOffers>h2 {
+    width: 60%;
+    overflow: hidden;
+    font-size: 36px;
+    font-weight: 600;
+    color: #161618;
+    padding: 20px;
 }
 
 .allOffers>h1 {
-    font-size: 120px;
+    font-size: 28px;
+    font-weight: 900;
     color: #161618;
     overflow: hidden;
     text-align: center;
 }
 
-.allOffers>h2 {
-    width: 50%;
-    overflow: hidden;
-    font-size: 40px;
-    font-weight: 600;
-    color: #161618;
-}
-
-.allOffers>h1 {
-    font-size: 30px;
-    font-weight: 900;
-    color: #161618;
-    overflow: hidden;
-
-}
-
 
 .button {
     text-decoration: none;
-    margin: 15px;
+    margin: 0px 20px 20px 0px;
     background-color: #470000;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
     display: inline-block;
@@ -250,35 +225,225 @@ h1#all-offers {
     border-radius: 30px;
 }
 
+/* create */
+
+#create-page,
+#edit-page {
+    margin: 5% auto;
+    width: 800px;
+    height: auto;
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    text-align: center;
+    background: rgb(64, 1, 1)3px 3px 15px;
+    box-shadow: 0px 0px 32px 0px #ff0000, rgb(255, 0, 0)0px 0px 15px;
+}
+
+
+/* All arround to use */
+input[type="text"] {
+    background: #ecf0f3;
+    padding: 30px;
+    padding-left: 20px;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 24px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #c0c2c5, inset -6px -6px 6px white;
+}
+
+textarea {
+    width: 100%;
+    min-width: 20vw;
+    min-height: 7em;
+    border: 2px solid #86a480;
+    border-radius: 0.7em;
+    font-size: 26px;
+    border-bottom-color: #ecf0f3;
+    background-color: #ecf0f3;
+    border-right-color: #ecf0f3;
+    margin-top: 7px;
+    color: black;
+    box-shadow: inset 6px 6px 6px #c0c2c5, inset -6px -6px 6px white;
+}
+
+label,
+input {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+label {
+    margin-bottom: 8px;
+    font-size: 27px;
+    color: rgb(158, 158, 158);
+    margin-top: 13px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+label:nth-of-type(2) {
+    margin-top: 30px;
+}
+
+input::placeholder {
+    color: rgba(184, 179, 179, 0.678);
+}
+
+input[type="password"],
+input[type="number"],
+input[type="email"] {
+    background: rgb(158, 158, 158);
+    padding: 30px;
+    padding-left: 20px;
+    height: 30px;
+    margin-top: 20px;
+    font-size: 24px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #c0c2c5, inset -6px -6px 6px white;
+}
+
+/* label[for="terms"]>input {
+    display: inline;
+} */
+
+.btn.submit {
+    margin-top: 30px;
+    background: whitesmoke;
+    height: 60px;
+    border-radius: 20px;
+    color: #970000;
+    font-size: 30px;
+    cursor: pointer;
+    font-weight: 900;
+    transition: 0.5s;
+}
+
+.btn.submit:hover {
+    color: white;
+    background-color: #600000;
+    box-shadow: 7px 7px 10px white;
+}
+
+.container {
+    text-align: left;
+    margin-top: 0px;
+}
+
+.field>span {
+    position: absolute;
+    font-size: 18px;
+    bottom: 17px;
+    right: 8px;
+    text-decoration: none;
+    color: #600000;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+
+/* Login-Register */
+
+
+#login-page {
+    margin: 5% auto;
+    width: 800px;
+    height: auto;
+    border-radius: 20px;
+    padding: 60px;
+    box-sizing: border-box;
+    background: #86000088;
+    box-shadow: 0px 0px 32px 0px #ff000088;
+}
+
+#register-page {
+    margin: 5% auto;
+    width: 800px;
+    height: auto;
+    border-radius: 20px;
+    padding: 60px;
+    box-sizing: border-box;
+    background: #86000088;
+    box-shadow: 0px 0px 32px 0px #ff000088;
+}
+
+.brand-logo {
+    height: 200px;
+    width: 200px;
+    background: url("../images/gm-logo.png");
+    background-repeat: round;
+    margin: auto;
+    border-radius: 50%;
+    box-sizing: border-box;
+    box-shadow: 7px 7px 10px #bf0000b1, -7px -7px 10px #bf0000b1;
+}
+
+.container>h1 {
+    margin-top: 30px;
+    font-weight: 900;
+    font-size: 4rem;
+    text-align: center;
+    color: white;
+    letter-spacing: 1.5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 10px;
+}
 
 
 
+/*  DEtails */
+#offer-details {
+    margin: auto;
+    display: block;
+    width: 1000px;
+    margin: 90px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.4s;
+    text-align: center;
+}
+
+#offer-details>h1 {
+    color: #fff;
+    font-family: "Agency FB";
+    font-size: 70px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.offer-header {
+    margin: auto;
+    width: 800px;
+    height: 800px;
+    text-shadow: rgba(98, 98, 98, 0.47) 3px 3px 5px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px #ff0000;
+    background-color: whitesmoke;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.offer-header>h1 {
+    font-size: 60px;
+}
+
+.offer-header>p {
+    font-size: 40px;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.offer-img {
+    padding: 20px 0px;
+    width: 150px;
+    height: 150px;
+}
 
 
 
@@ -288,7 +453,7 @@ h1#all-offers {
 
 @keyframes slideIn {
     0% {
-        transform: translateX(500px) scale(.2);
+        transform: translateX(500px) scale(0);
     }
 
     100% {

@@ -1,8 +1,10 @@
 import { OfferItem } from "./OfferItem/OfferItem"
 
 export const Offer = ({
+    
     offers,
 }) => {
+
     return (
         <>
             <h1 id='all-offers'>All Offers</h1>
