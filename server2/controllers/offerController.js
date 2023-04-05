@@ -76,10 +76,11 @@ offerController.put('/:id', async (req, res) => {
 offerController.delete('/:id', async (req, res) => {
     try {
         const offer = await getOfferById(req.params.id);
-        if (req.user._id != offer._ownerId._id) {
+        console.log(req.user)
+        if (req.user._id != offer._ownerId) {
             return res.status(403).json({ err: err.message })
         }
-        await deleteOffer(req.params.id);
+        await deleteOffer(req.params._id);
         res.status(204).end()
     } catch (err) {
         res.status(400).json({ err: err.message })
