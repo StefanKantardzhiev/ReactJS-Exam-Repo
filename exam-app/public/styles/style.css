@@ -398,28 +398,31 @@ input[type="email"] {
 
 /*  DEtails */
 #offer-details {
-    margin: auto;
     display: block;
-    width: 1000px;
-    margin: 90px auto;
-    overflow: hidden;
-    border-radius: 10px;
-    transition: all 0.4s;
+    width: 50%;
+    margin: 50px auto;
+    border-radius: 30px;
     text-align: center;
 }
 
 #offer-details>h1 {
+    border: 2px solid #ff0000;
+    border-radius: 60px;
+    box-shadow: inset 0px 0px 20px 10px #ff0000;
+    margin: 50px auto;
+    width: 100%;
+    text-align: center;
     color: #fff;
     font-family: "Agency FB";
-    font-size: 70px;
+    font-size: 48px;
     font-weight: 700;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    text-align: center;
+    padding: 50px 0px;
+    letter-spacing: 2px;
 }
 
 .offer-header {
     margin: auto;
+    padding: 30px;
     width: 800px;
     height: 800px;
     text-shadow: rgba(98, 98, 98, 0.47) 3px 3px 5px;

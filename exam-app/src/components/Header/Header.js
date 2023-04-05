@@ -15,7 +15,7 @@ export const Header = () => {
                         <span>Hello {user.email} !</span>
                         <Link to="/offers">All offers</Link>
                         <Link to="/offers/create">Create Offer</Link>
-                        <Link to="/" onClick={onLogoutHandler}>Abmelden</Link>
+                        <Link to="/" onClick={onLogoutHandler}>LogOut</Link>
                     </div>
 
                     :
