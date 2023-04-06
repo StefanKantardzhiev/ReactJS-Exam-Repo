@@ -139,10 +139,10 @@ section#welcome-world {
 
 #catalog-page {
     display: grid;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color: black;
     grid-template-columns: 20% 20% 20%;
-    gap: 150px;
+    gap: 100px;
 }
 
 
@@ -192,7 +192,7 @@ h1#all-offers {
 }
 
 .allOffers>h2 {
-    width: 60%;
+    width: 50%;
     overflow: hidden;
     font-size: 36px;
     font-weight: 600;
