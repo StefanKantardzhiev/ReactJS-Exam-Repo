@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Righteous);
+@import url(https://fonts.googleapis.com/css?family=Rancho);
 
 body {
     margin: 0;
@@ -101,10 +102,11 @@ section#welcome-world {
 }
 
 .welcome-message h3 {
+    font-family: Rancho;
     display: block;
     padding-left: 10%;
     font-style: oblique;
-    font-size: 50px;
+    font-size: 60px;
     font-weight: 400;
     transition: all 0.3s ease-out;
     color: whitesmoke;
@@ -196,6 +198,7 @@ h1#all-offers {
     margin: auto;
     width: 80%;
     font-size: 20px;
+    font-family: Rancho;
     font-style: italic;
     font-weight: 400;
     padding: 10px;
