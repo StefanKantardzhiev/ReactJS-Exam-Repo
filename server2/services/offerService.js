@@ -27,12 +27,13 @@ async function updateOffer(id, offer) {
     existing.price = offer.price;
     existing.city = offer.city
     existing.imageUrl = offer.imageUrl
-    
-    
+
+
     return existing.save();
 }
 
 const deleteOffer = async (id) => {
+    
     await Offer.findByIdAndDelete(id)
 }
 const getMostExpensiveOffers = async () => {

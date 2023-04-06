@@ -4,8 +4,8 @@ import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 import { offerServiceFactory } from '../../services/offerService'
 
-export const Create = () => {
-    const [auth, setAuth] = useLocalStorage('auth', {});
+export const Create = ({ user }) => {
+
     const navigate = useNavigate()
     const [formData, setFormData] = useState({
         title: '',
@@ -13,19 +13,19 @@ export const Create = () => {
         price: Number,
         city: '',
         imageUrl: '',
-        _ownerId: auth._id
+        _ownerId: user._id
     });
-
+    
     const changeHandler = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
-    const offerService = offerServiceFactory(auth.accessToken);
+    const offerService = offerServiceFactory();
 
 
     const onSubmitHandler = async (e) => {
         e.preventDefault();
         try {
-            const offerData = await offerService.create(formData)
+            await offerService.create(formData)
             navigate('/offers');
         } catch (error) {
             console.log(error.message);

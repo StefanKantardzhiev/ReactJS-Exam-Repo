@@ -11,14 +11,15 @@ import { offerServiceFactory } from '../../services/offerService';
 
 
 
-export const OfferDetails = () => {
+export const OfferDetails = ({ offers }) => {
 
     const { offerId } = useParams()
-
 
     const context = useContext(AuthContext)
     const user = context.user
     const [offer, setOffer] = useState([])
+    const [items, setItems] = useState(offers)
+
     const navigate = useNavigate()
     const offerService = offerServiceFactory()
 
@@ -27,19 +28,21 @@ export const OfferDetails = () => {
             .then(data => {
                 setOffer(data)
             })
-    }, []);
+    }, [offers]);
+
+
 
 
     const isOwner = offer._ownerId === user._id;
     const onDeleteClick = async () => {
         await offerService.delete(offer._id);
+        navigate('/offers');
+    }
 
-        // TODO: delete from state
 
-        navigate('/catalog');
-    };
 
-    console.log(offer);
+
+
     return (
         <section id="offer-details">
             <h1>Offer Details</h1>
@@ -52,7 +55,7 @@ export const OfferDetails = () => {
                     <p className="text">{offer.price} EUR</p>
                     {isOwner && (
                         <div className="buttons">
-                            <Link to={`/catalog/${offer._id}/edit`} className="button">Edit</Link>
+                            <Link to={`/offers/${offer._id}/edit`} className="button">Edit</Link>
                             <button className="button" onClick={onDeleteClick}>Delete</button>
                         </div>
                     )}

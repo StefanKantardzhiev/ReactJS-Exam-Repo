@@ -20,30 +20,14 @@ import { Create } from './components/Create/Create';
 function App() {
 
   //Offers get from server  
-  const [recent, setRecent] = useState([]);
-  const [offers, setOffers] = useState([]);
-
 
 
   //user get from server  
   const [user, setUser] = useLocalStorage('auth', {});
   const [auth, setAuth] = useLocalStorage('auth', {});
-  const offerService = offerServiceFactory();
+
+
   // offers GET services
-  useEffect(() => {
-    offerService.getAll()
-      .then(result => {
-        setOffers(result)
-      })
-  }, []);
-
-  useEffect(() => {
-    offerService.getRecent()
-      .then(result => {
-        setRecent(result)
-      })
-  }, []);
-
 
 
   const authService = authServiceFactory(auth.accessToken)
@@ -69,13 +53,13 @@ function App() {
 
       <main id="main-content">
         <Routes>
-          <Route path='/' element={<Home offers={offers} />} />
+          <Route path='/' element={<Home />} />
           <Route path='/auth/login' element={<Login />} />
           <Route path='/auth/register' element={<Register />} />
-          <Route path='/offers' element={<Offer offers={offers} />} />
-          <Route path='/offers/latest' element={<Latest offers={recent} />} />
-          <Route path='/offers/create' element={<Create offers={offers} />} />
-          <Route path='/offers/:offerId' element={<OfferDetails offers={offers} />} />
+          <Route path='/offers' element={<Offer />} />
+          <Route path='/offers/latest' element={<Latest />} />
+          <Route path='/offers/create' element={<Create user={user} />} />
+          <Route path='/offers/:offerId' element={<OfferDetails />} />
         </Routes>
       </main>
 

@@ -37,7 +37,6 @@ export const offerServiceFactory = (token) => {
 
     const deleteOffer = (offerId) => request.delete(`${baseUrl}/${offerId}`);
 
-
     return {
         getAll,
         getRecent,

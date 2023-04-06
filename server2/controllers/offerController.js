@@ -11,7 +11,7 @@ offerController.post('/create', async (req, res) => {
     const data = req.body;
     try {
         const userId = req?.user?._id;
-            // console.log(data);
+        // console.log(data);
 
         const offer = await addOffer(data, userId)
         await updateUserOffers(userId, offer._id)
@@ -76,11 +76,10 @@ offerController.put('/:id', async (req, res) => {
 offerController.delete('/:id', async (req, res) => {
     try {
         const offer = await getOfferById(req.params.id);
-        console.log(req.user)
         if (req.user._id != offer._ownerId) {
             return res.status(403).json({ err: err.message })
         }
-        await deleteOffer(req.params._id);
+        await deleteOffer(req.params.id);
         res.status(204).end()
     } catch (err) {
         res.status(400).json({ err: err.message })
