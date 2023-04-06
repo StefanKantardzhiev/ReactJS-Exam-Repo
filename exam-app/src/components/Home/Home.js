@@ -2,7 +2,7 @@ export const Home = () => {
 
     return (
         <section id="welcome-world">
-            <video id="background-video" autoPlay repeat preload muted src='../../images/mechanic2.mp4' type="video/mp4">
+            <video id="background-video" autoPlay repeat="true" preload="true" muted src='../../images/mechanic2.mp4' type="video/mp4">
             </video>
             <div className="welcome-message">
                 <h2>GermanMechanics.de</h2>

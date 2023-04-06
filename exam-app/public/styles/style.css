@@ -1,22 +1,27 @@
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+
 body {
     margin: 0;
     background-color: black;
+    font-family: Righteous;
+    /* letter-spacing: 0.5cm; */
 }
 
 #main-content {
     margin: auto;
-    font-family: monospace;
     margin: 0;
 }
 
 /* navigation */
 header {
+    width: 100%;
     font-size: 30px;
     color: whitesmoke;
     text-align: right;
 }
 
 header nav {
+
     padding: 25px;
 }
 
@@ -29,10 +34,10 @@ footer {
 }
 
 nav a {
+
     color: whitesmoke;
     text-decoration: none;
     margin: 0 1em;
-    font-weight: bold;
     letter-spacing: 2px;
 }
 
@@ -80,23 +85,27 @@ section#welcome-world {
 }
 
 .welcome-message h2 {
-    padding-left: 10%;
+    display: block;
+    position: relative;
+    padding-left: 5%;
     color: whitesmoke;
     font-style: oblique;
-    font-size: 100px;
-    font-weight: 500;
+    font-size: 80px;
+    font-weight: 700;
     margin-top: 2%;
-    width: 50%;
+    margin-right: 50px;
+    width: 100%;
     text-overflow: ellipsis;
     transition: all 0.5s ease-out;
     text-shadow: rgb(64, 1, 1)3px 3px 15px;
 }
 
 .welcome-message h3 {
+    display: block;
     padding-left: 10%;
     font-style: oblique;
-    font-size: 60px;
-    font-weight: 800;
+    font-size: 50px;
+    font-weight: 400;
     transition: all 0.3s ease-out;
     color: whitesmoke;
     text-shadow: rgb(64, 1, 1)3px 3px 15px;
@@ -104,7 +113,9 @@ section#welcome-world {
 
 
 .image-home {
-    position: relative;
+    display: block;
+    margin-top: -20px;
+    /* position: relative; */
     float: right;
     background-image: url("../images/mechanic.png");
     width: 400px;
@@ -112,11 +123,11 @@ section#welcome-world {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    /* overflow-inline: hidden; */
+    overflow: visible;
 }
 
 .image-header {
-    /* left: 1%; */
+    left: 1%;
     position: fixed;
     background-image: url("../images/mechanic.png");
     width: 70px;
@@ -131,9 +142,9 @@ section#welcome-world {
 /* Offers */
 
 #search {
-    margin:auto;
+    margin: auto;
     margin-bottom: 100px;
-    padding:30px;
+    padding: 30px;
     width: 30%;
 }
 
@@ -173,7 +184,6 @@ h1#all-offers {
     width: 50%;
     text-align: center;
     color: #fff;
-    font-family: "Agency FB";
     font-size: 48px;
     font-weight: 700;
     padding: 50px 0px;
@@ -287,7 +297,6 @@ label {
     font-size: 27px;
     color: rgb(158, 158, 158);
     margin-top: 13px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 label:nth-of-type(2) {
@@ -394,7 +403,6 @@ input[type="email"] {
     text-align: center;
     color: white;
     letter-spacing: 1.5px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-bottom: 10px;
 }
 
@@ -417,7 +425,6 @@ input[type="email"] {
     width: 100%;
     text-align: center;
     color: #fff;
-    font-family: "Agency FB";
     font-size: 48px;
     font-weight: 700;
     padding: 50px 0px;
