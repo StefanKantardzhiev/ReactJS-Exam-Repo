@@ -15,6 +15,7 @@ import { Offer } from './components/Offer/Offer';
 import { Latest } from './components/Latest/Latest';
 import { OfferDetails } from './components/OfferDetails/OfferDetails'
 import { Create } from './components/Create/Create';
+import { EditGame } from './components/EditGame/EditGame';
 
 
 function App() {
@@ -60,6 +61,7 @@ function App() {
           <Route path='/offers/latest' element={<Latest />} />
           <Route path='/offers/create' element={<Create user={user} />} />
           <Route path='/offers/:offerId' element={<OfferDetails />} />
+          <Route path='/offers/:offerId/edit' element={<EditGame />} />
         </Routes>
       </main>
 

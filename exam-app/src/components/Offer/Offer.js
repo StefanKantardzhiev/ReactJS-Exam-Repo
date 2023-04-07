@@ -29,27 +29,31 @@ export const Offer = () => {
         }
     });
 
+
     return (
 
         <>
             <h1 id='all-offers'>All Offers</h1>
             <div id="search">
-            <label htmlFor="search" >Search:</label>
-            <input
-                type="text"
-                name="search"
-                placeholder="Filter Change"
-                onChange={onChangeHandler}
-            /></div>
+                <label htmlFor="search" >Search:</label>
+                <input
+                    type="text"
+                    name="search"
+                    placeholder="Filter Change"
+                    onChange={onChangeHandler}
+                /></div>
             <section id="catalog-page">
+
                 {filteredData.map(x =>
                     <OfferItem key={x._id} {...x} />
                 )}
 
-                {filteredData.length === 0 && (
+                {filteredData.length === 0 || filteredData === null && (
                     <h3 className="no-articles">No articles yet</h3>
                 )}
             </section >
+
+
         </>
     );
 };
