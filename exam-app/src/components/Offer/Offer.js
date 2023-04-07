@@ -2,11 +2,19 @@ import { OfferItem } from "./OfferItem/OfferItem"
 import { useState, useEffect } from "react";
 import { offerServiceFactory } from '../../services/offerService'
 
+import { commentServiceFactory } from '../../services/commentService'
+import { AddComment } from '../Offer/OfferItem/AddComment'
+
 export const Offer = () => {
 
+
+
     const [offers, setOffers] = useState([]);
-    const offerService = offerServiceFactory()
     const [query, setQuery] = useState("")
+
+
+
+    const offerService = offerServiceFactory()
 
     useEffect(() => {
         offerService.getAll()
@@ -30,6 +38,9 @@ export const Offer = () => {
     });
 
 
+
+    
+
     return (
 
         <>
@@ -47,12 +58,10 @@ export const Offer = () => {
                 {filteredData.map(x =>
                     <OfferItem key={x._id} {...x} />
                 )}
-
                 {filteredData.length === 0 || filteredData === null && (
                     <h3 className="no-articles">No articles yet</h3>
                 )}
             </section >
-
 
         </>
     );

@@ -3,10 +3,10 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 // import * as commentService from '../../services/commentService';
 // import { useService } from '../../hooks
 import { AuthContext } from '../../contexts/AuthContext'
-// import { AddComment } from './AddComment/AddComment';
+import { AddComment } from '../Offer/OfferItem/AddComment'
 // import { gameReducer } from '../../reducers/gameReducer';
 import { offerServiceFactory } from '../../services/offerService';
-
+import { commentServiceFactory } from '../../services/commentService';
 
 
 
@@ -17,9 +17,10 @@ export const OfferDetails = ({ offers }) => {
 
     const context = useContext(AuthContext)
     const user = context.user
+
     const [offer, setOffer] = useState([])
     const [items, setItems] = useState(offers)
-
+    const [comments, setComments] = useState("")
     const navigate = useNavigate()
     const offerService = offerServiceFactory()
 
@@ -32,15 +33,25 @@ export const OfferDetails = ({ offers }) => {
 
 
 
-
+    const changeHandler = (e) => {
+        setComments(e.target.value);
+        console.log(comments)
+    };
+    
     const isOwner = offer._ownerId === user._id;
     const onDeleteClick = async () => {
         await offerService.delete(offer._id);
         navigate('/offers');
     }
 
+    
 
 
+    const commentService = commentServiceFactory()
+
+    const onCommentSubmit = async (commentId, values) => {
+        await commentService.create(commentId, values.comment);
+    }
 
 
     return (
@@ -59,29 +70,10 @@ export const OfferDetails = ({ offers }) => {
                             <button className="button" onClick={onDeleteClick}>Delete</button>
                         </div>
                     )}
-                    
+
                 </div>
 
-
-                {/* 
-                <div className="details-comments">
-                    <h2>Comments:</h2>
-                    <ul>
-                        {offer.comments && game.comments.map(x => (
-                            <li key={x._id} className="comment">
-                                <p>{x.author.email}: {x.comment}</p>
-                            </li>
-                        ))}
-                    </ul>
-
-                    {!game.comments?.length && (
-                        <p className="no-comment">No comments.</p>
-                    )}
-                </div> */}
-
-
-
-
+                <AddComment onCommentSubmit={onCommentSubmit} changeHandler={changeHandler} />
                 {/* {isAuthenticated && <AddComment onCommentSubmit={onCommentSubmit} />} */}
             </div>
         </section>
