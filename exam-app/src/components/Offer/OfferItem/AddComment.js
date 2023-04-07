@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { commentServiceFactory } from "../../../services/commentService";
 import { useParams } from "react-router-dom";
-
+import { useLocalStorage } from '../../../hooks/useLocalStorage'
 
 export const AddComment = () => {
-
-    const { commentId } = useParams()
+    const [auth, setAuth] = useLocalStorage('auth', {});
+    const userId = auth._id
     const commentService = commentServiceFactory()
     const [values, setValues] = useState('');
 
-
+    console.log(values)
     const changeHandler = (e) => {
         setValues(e.target.value);
     };
@@ -20,9 +20,10 @@ export const AddComment = () => {
 
     };
     console.log(values)
-
-    const onCommentSubmit = async (commentId, values) => {
-        await commentService.create(commentId, values.comment);
+    const onCommentSubmit = async (values, userId) => {
+        await commentService.create(values, userId);
+        values.preventDefault();
+        setValues('');
     };
 
 

@@ -5,7 +5,7 @@ const baseUrl = 'http://localhost:3030/comments';
 export const commentServiceFactory = (token) => {
     const request = requestFactory(token);
 
-    
+
     const getAll = async (commentId) => {
         const searchQuery = encodeURIComponent(`commentId="${commentId}"`);
         const relationQuery = encodeURIComponent(`author=_ownerId:users`);
@@ -16,10 +16,16 @@ export const commentServiceFactory = (token) => {
         return comments;
     };
 
-    const create = async (commentId, comment) => {
-        const result = await request.post(`${baseUrl}/create`, { commentId, comment });
+    const create = async (userId, comment) => {
+        const result = await request.post(`${baseUrl}/create`, { comment, userId });
 
         return result;
     };
 
+
+
+    return {
+        getAll,
+        create
+    };
 }

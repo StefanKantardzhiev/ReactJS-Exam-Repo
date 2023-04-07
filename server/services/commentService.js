@@ -6,7 +6,7 @@ require('dotenv').config()
 const addComment = async (comment, id) => {
     try {
         comment.owner = id;
-        return await Comment.create(comment)
+        return await Comment.create({ ...comment })
     } catch (error) {
         throw new Error(error)
     }

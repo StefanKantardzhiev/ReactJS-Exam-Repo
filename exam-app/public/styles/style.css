@@ -1,7 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Righteous);
 @import url(https://fonts.googleapis.com/css?family=Rancho);
 
+
+*{
+    box-sizing: border-box;
+}
 body {
+    width: 100%;
     margin: 0;
     background-color: black;
     font-family: Righteous;
@@ -9,6 +14,7 @@ body {
 }
 
 #main-content {
+    width: 100%;
     margin: auto;
     margin: 0;
 }
@@ -351,10 +357,11 @@ input[type="email"] {
 }
 
 .field>span {
-    position: absolute;
+    display: block;
+    width: 50%;
+    margin:auto;
+    text-align: center;
     font-size: 18px;
-    bottom: 17px;
-    right: 8px;
     text-decoration: none;
     color: #600000;
     background: rgb(255, 255, 255);
