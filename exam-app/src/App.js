@@ -16,6 +16,7 @@ import { Latest } from './components/Latest/Latest';
 import { OfferDetails } from './components/OfferDetails/OfferDetails'
 import { Create } from './components/Create/Create';
 import { EditGame } from './components/EditGame/EditGame';
+import { Profile } from './components/Profile/Profile';
 
 
 function App() {
@@ -45,7 +46,6 @@ function App() {
   }
 
 
-
   return (
 
     <AuthContext.Provider value={{ user, setUserData, onLogoutHandler }}>
@@ -62,6 +62,7 @@ function App() {
           <Route path='/offers/create' element={<Create user={user} />} />
           <Route path='/offers/:offerId' element={<OfferDetails />} />
           <Route path='/offers/:offerId/edit' element={<EditGame />} />
+          <Route path='/profile' element={<Profile user={user} />} />
         </Routes>
       </main>
 

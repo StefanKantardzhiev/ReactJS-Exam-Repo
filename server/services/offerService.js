@@ -33,12 +33,8 @@ async function updateOffer(id, offer) {
 }
 
 const deleteOffer = async (id) => {
-    
+
     await Offer.findByIdAndDelete(id)
-}
-const getMostExpensiveOffers = async () => {
-    const offers = await Offer.find({}).sort({ price: -1 }).limit(3);
-    return offers
 }
 
 const getRecent = async () => {
@@ -46,8 +42,9 @@ const getRecent = async () => {
     return offers
 }
 
-const getOffersByOwner = async (_id) => {
-    return await Offer.find({ _ownerId: _id })
+const getOffersByOwner = async () => {
+    const offers = await Offer.find({}).sort({ _ownerId: -1 });
+    return offers
 }
 
 
@@ -57,7 +54,6 @@ module.exports = {
     getOfferById,
     updateOffer,
     deleteOffer,
-    getMostExpensiveOffers,
     getRecent,
     getOffersByOwner
 }

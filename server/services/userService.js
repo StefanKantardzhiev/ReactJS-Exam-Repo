@@ -59,6 +59,8 @@ const updateUserOffers = async (_id, offerId) => {
     } catch (error) {
         throw new Error(error)
     }
+
+    
 }
 
 const logout = (token) => {

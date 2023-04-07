@@ -20,6 +20,13 @@ export const offerServiceFactory = (token) => {
     };
 
 
+    const getByOwner = async () => {
+        const result = await request.get(`${baseUrl}/profile`);
+        const offers = Object.values(result);
+
+        return offers;
+    };
+
     const getOne = async (offerId) => {
         const result = await request.get(`${baseUrl}/${offerId}`);
 
@@ -39,6 +46,7 @@ export const offerServiceFactory = (token) => {
 
     return {
         getAll,
+        getByOwner,
         getRecent,
         getOne,
         create,

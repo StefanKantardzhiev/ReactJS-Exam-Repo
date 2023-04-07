@@ -1,6 +1,6 @@
 const User = require('../models/User');
 
-const { addOffer, getAll, getMostExpensiveOffers, getRecent, getOfferById, updateOffer, deleteOffer } = require('../services/offerService');
+const { addOffer, getAll, getRecent, getOfferById, updateOffer, deleteOffer, getOffersByOwner } = require('../services/offerService');
 const { updateUserOffers } = require('../services/userService');
 
 const offerController = require('express').Router();
@@ -28,11 +28,6 @@ offerController.get('/', async (req, res) => {
     res.status(200).json(offers)
 });
 
-//get most expensive offers
-offerController.get('/most-expensive', async (req, res) => {
-    const offers = await getMostExpensive()
-    res.status(200).json(offers)
-});
 
 //get most recent offers
 offerController.get('/recent', async (req, res) => {
@@ -65,6 +60,18 @@ offerController.put('/:id', async (req, res) => {
             return res.status(403).json({ message: 'You cannot edit this offer' })
         }
         const result = await updateOffer(req.params.id, req.body);
+        res.status(200).json(result)
+    } catch (err) {
+        console.log(err);
+        res.status(400).json({ error: err.message })
+    }
+});
+
+
+offerController.get('/profile', async (req, res) => {
+    try {
+        const result = await getOffersByOwner()
+        console.log(result)
         res.status(200).json(result)
     } catch (err) {
         console.log(err);

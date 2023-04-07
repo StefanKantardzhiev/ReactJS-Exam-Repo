@@ -59,6 +59,7 @@ export const OfferDetails = ({ offers }) => {
                             <button className="button" onClick={onDeleteClick}>Delete</button>
                         </div>
                     )}
+                    
                 </div>
 
 
