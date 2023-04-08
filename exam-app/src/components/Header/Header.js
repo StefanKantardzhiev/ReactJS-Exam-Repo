@@ -12,7 +12,7 @@ export const Header = () => {
                 {(user != null)
                     ?
                     <div id="user">
-                        <span>Hello {user.email} !</span>
+                        <span>Hello<Link to="/profile">{user.email}</Link></span>
                         <Link to="/offers">All offers</Link>
                         <Link to="/offers/create">Create Offer</Link>
                         <Link to="/" onClick={onLogoutHandler}>LogOut</Link>
