@@ -25,7 +25,7 @@ const createAccessToken = (user) => {
 }
 const register = async (email, password, rePass) => {
     const existingEmail = await User.findOne({ email })
-    console.log(password,rePass)
+    // console.log(password,rePass)
     if (password != rePass) {
         throw new Error('Passwords dont match')
     }

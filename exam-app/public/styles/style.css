@@ -14,14 +14,12 @@ body {
 }
 
 #main-content {
-    width: 100%;
-    margin: auto;
-    margin: 0;
+    margin:auto;
+    
 }
 
 /* navigation */
 header {
-    width: 100%;
     font-size: 30px;
     color: whitesmoke;
     text-align: right;
@@ -162,6 +160,7 @@ section#welcome-world {
     background-color: black;
     grid-template-columns: 20% 20% 20%;
     gap: 100px;
+    margin-bottom:100px;
 }
 
 
@@ -254,10 +253,8 @@ h1#all-offers {
 #edit-page {
     margin: 5% auto;
     width: 800px;
-    height: auto;
     border-radius: 20px;
     padding: 40px;
-    box-sizing: border-box;
     text-align: center;
     background: rgb(64, 1, 1)3px 3px 15px;
     box-shadow: 0px 0px 32px 0px #ff0000, rgb(255, 0, 0)0px 0px 15px;
@@ -538,6 +535,23 @@ input[type="email"] {
     display: block;
     width: 50%;
     font-size: 30px;
+}
+
+
+/* errors */
+.errors-container {
+    margin:auto;
+    width: 80%;
+    text-align: center;
+    background-color: #af0000;
+    border-radius: 60px;
+    padding:5px;
+    /* box-shadow: inset 0px 0px 20px 10px #ff0000; */
+}
+.errors{
+
+    color: white;
+    font-size: 20px;
 }
 
 @keyframes slideIn {

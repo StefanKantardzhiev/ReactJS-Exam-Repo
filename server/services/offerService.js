@@ -64,11 +64,15 @@ const likeOffer = async (offerId, userId) => {
 
 }
 const dislikeOffer = async (offerId, userId) => {
+
     const offer = await Offer.findById(offerId);
-    offer.likes.filter(p => p !== userId);
-    // return photo.save();
+    offer.likes.filter(x => x != userId);
     offer.save();
-    return photo.likes;
+
+
+    console.log(offer.likes)
+
+    return offer.likes;
 }
 
 
@@ -87,4 +91,5 @@ module.exports = {
     getRecent,
     addComment,
     likeOffer,
+    dislikeOffer
 }

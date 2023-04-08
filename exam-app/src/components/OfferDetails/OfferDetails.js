@@ -16,7 +16,7 @@ export const OfferDetails = () => {
 
     const [offer, setOffer] = useState([])
     const [likes, setLikes] = useState([]);
-    const [isLiked, setIsLiked] = useState(undefined);
+    const [isLiked, setIsLiked] = useState(false);
 
 
     const navigate = useNavigate()
@@ -62,7 +62,7 @@ export const OfferDetails = () => {
             offerService.likeOffer(offer._id, token)
                 .then(data => {
                     setLikes(data);
-
+                    setIsLiked(true)
                 })
             navigate(`/offers`)
         } catch (error) {
@@ -71,7 +71,20 @@ export const OfferDetails = () => {
     }
 
 
-    const offerLikes = offer.likes
+
+    // const onDislike = async (e) => {
+    //     e.preventDefault();
+    //     try {
+    //         offerService.dislikeOffer(offer._id, token)
+    //             .then(data => {
+    //                 setLikes(data);
+    //                 // setIsLiked(false);
+    //                 // setIsLiked(true);
+    //             })
+    //     } catch (error) {
+    //         console.log(error.message);
+    //     }
+    // }
 
     return (
         <section id="offer-details">
@@ -95,6 +108,7 @@ export const OfferDetails = () => {
                             <button className="button" type="submit" onClick={onLike}>Like</button>
 
                         </>)}
+                    {/* <button className="button" type="submit" onClick={onDislike}>Dislike</button> */}
                     <span className="likes">Likes: {likes.length}</span>
                 </div>
             </div>

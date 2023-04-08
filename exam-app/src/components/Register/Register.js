@@ -11,12 +11,20 @@ export const Register = () => {
     const [formData, setFormData] = useState({
         email: '',
         password: '',
-        rePass:''
+        rePass: ''
+    });
+
+
+    const [errors, setErrors] = useState({
+        email: false,
+        password: false,
+        rePass: false,
+        serverErrors: false
     });
 
     const onChangeHandler = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
-        console.log(formData)
+        setErrors({ ...errors, [e.target.name]: false, ["serverErrors"]: false });
 
     };
     const { setUserData } = useContext(AuthContext);
@@ -37,12 +45,55 @@ export const Register = () => {
     }
 
 
+    const onLoginHandler = (e) => {
+        if (e.target.value === 'email') {
+            const emailRegexValidator = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+            if (!e.target.value.match(emailRegexValidator)) {
+                setErrors(errors => ({ ...errors, [e.target.name]: true }));
+            } else {
+                setErrors(errors => ({ ...errors, [e.target.name]: false }));
+
+            }
+        }
+        if (e.target.password === 'password') {
+            if (e.target.value.length < 6 || e.target.value.length > 12) {
+                setErrors(errors => ({ ...errors, [e.target.name]: true }));
+            } else {
+                setErrors(errors => ({ ...errors, [e.target.name]: false }));
+            }
+        }
+
+        // if (e.target.rePass != e.target.password) {
+        //     setErrors(errors => ({ ...errors, [e.target.name]: true }));
+        // }
+    };
+
     return (
         <section id="register-page" className="auth">
             <form id="register" method="POST" onSubmit={onSubmitHandler}>
                 <div className="container">
                     <div className="brand-logo"></div>
                     <h1>Register</h1>
+                    <div className="errors-container">
+                        {(errors.title || errors.password || errors.rePass) &&
+                            <div className='errors'>
+                                {errors.email &&
+                                    <p className="error" >
+                                        Email is invalid! Try another one!
+                                    </p>}
+                                {errors.password &&
+                                    <p className="error" >
+                                        Password must be between 6 and 12 characters!
+                                    </p>}
+                                {/* {errors.rePass &&
+                                    <p className="error" >
+                                        Repass must equal password!
+                                    </p>} */}
+
+                            </div>}
+                    </div>
+
+
                     <label htmlFor="email">Email:</label>
                     <input
                         type="email"
@@ -50,6 +101,7 @@ export const Register = () => {
                         name="email"
                         placeholder="example@mail.bg"
                         onChange={onChangeHandler}
+                        onBlur={onLoginHandler}
                     />
 
                     <label htmlFor="register-pass">Password:</label>
@@ -58,6 +110,7 @@ export const Register = () => {
                         id="register-password"
                         name="password"
                         onChange={onChangeHandler}
+                        onBlur={onLoginHandler}
                     />
                     <label htmlFor="register-pass">Re-Password:</label>
                     <input
@@ -65,6 +118,7 @@ export const Register = () => {
                         id="rePass"
                         name="rePass"
                         onChange={onChangeHandler}
+                        onBlur={onLoginHandler}
                     />
                     <input type="submit" className="btn submit" value="Register" />
                     <p className="field">

@@ -58,12 +58,25 @@ export const offerServiceFactory = (token) => {
             console.log(result);
             return result;
         } catch (error) {
-            
+
             return error;
         }
     };
 
-    
+
+    const dislikeOffer = async (offerId) => {
+        try {
+            const response = await fetch(`${baseUrl}/${offerId}/dislike`)
+            const result = await response.json();
+            return result;
+        } catch (error) {
+
+            return error;
+        }
+    };
+
+
+
     const edit = (offerId, data) => request.put(`${baseUrl}/${offerId}`, data);
 
     const deleteOffer = (offerId) => request.delete(`${baseUrl}/${offerId}`);
@@ -77,6 +90,7 @@ export const offerServiceFactory = (token) => {
         edit,
         addComment,
         likeOffer,
+        dislikeOffer,
         delete: deleteOffer,
     };
 }

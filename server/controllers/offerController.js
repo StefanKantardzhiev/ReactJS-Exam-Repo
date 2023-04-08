@@ -1,6 +1,6 @@
 const User = require('../models/User');
 
-const { addOffer, getAll, getRecent, getOfferById, updateOffer, deleteOffer, addComment, likeOffer } = require('../services/offerService');
+const { addOffer, getAll, getRecent, getOfferById, updateOffer, deleteOffer, addComment, likeOffer, dislikeOffer } = require('../services/offerService');
 const { updateUserOffers } = require('../services/userService');
 
 const offerController = require('express').Router();
@@ -111,6 +111,20 @@ offerController.get('/:id/like', async (req, res) => {
         const offer = await getOfferById(req.params.id);
         if (offer._ownerId._id != req?.user?._id && offer.likes.map(p => p.includes(req?.user?._id) == false)) {
             const likes = await likeOffer(req.params.id, req?.user?._id)
+            return likes;
+        }
+        return res.status(200).json(offer);
+    } catch (error) {
+        return error;
+    }
+});
+
+
+offerController.get('/:id/dislike', async (req, res) => {
+    try {
+        const offer = await getOfferById(req.params.id);
+        if (offer._ownerId._id != req?.user?._id) {
+            const likes = await dislikeOffer(req.params.id, req?.user?._id)
             return likes;
         }
         return res.status(200).json(offer);
