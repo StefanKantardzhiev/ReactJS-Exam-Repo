@@ -554,6 +554,15 @@ input[type="email"] {
     font-size: 20px;
 }
 
+
+.card{
+    background-color: wheat;
+    text-align: center;
+    margin: auto;
+    display: block;
+    width: 80%;
+}
+
 @keyframes slideIn {
     0% {
         transform: translateX(500px) scale(0);

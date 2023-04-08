@@ -25,7 +25,6 @@ export const Register = () => {
     const onChangeHandler = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
         setErrors({ ...errors, [e.target.name]: false, ["serverErrors"]: false });
-
     };
     const { setUserData } = useContext(AuthContext);
 
@@ -46,7 +45,7 @@ export const Register = () => {
 
 
     const onLoginHandler = (e) => {
-        if (e.target.value === 'email') {
+        if (e.target.name === 'email') {
             const emailRegexValidator = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
             if (!e.target.value.match(emailRegexValidator)) {
                 setErrors(errors => ({ ...errors, [e.target.name]: true }));
@@ -55,18 +54,14 @@ export const Register = () => {
 
             }
         }
-        if (e.target.password === 'password') {
-            if (e.target.value.length < 6 || e.target.value.length > 12) {
+        if (e.target.name === 'password') {
+            if ((e.target.value).length < 6 || (e.target.value).length > 12) {
                 setErrors(errors => ({ ...errors, [e.target.name]: true }));
             } else {
                 setErrors(errors => ({ ...errors, [e.target.name]: false }));
             }
         }
-
-        // if (e.target.rePass != e.target.password) {
-        //     setErrors(errors => ({ ...errors, [e.target.name]: true }));
-        // }
-    };
+    }
 
     return (
         <section id="register-page" className="auth">
@@ -85,10 +80,10 @@ export const Register = () => {
                                     <p className="error" >
                                         Password must be between 6 and 12 characters!
                                     </p>}
-                                {/* {errors.rePass &&
+                                {errors.rePass &&
                                     <p className="error" >
                                         Repass must equal password!
-                                    </p>} */}
+                                    </p>}
 
                             </div>}
                     </div>
