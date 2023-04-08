@@ -16,50 +16,44 @@ export const Profile = () => {
     // const navigate = useNavigate()
     const offerService = offerServiceFactory()
 
-    const userId = user._id
     useEffect(() => {
+        let ownerArr = []
         offerService.getAll()
             .then(data => {
-                setOffers(data)
+                data.map(offer => {
+                    if (offer._ownerId === user._id) {
+                        ownerArr.push(offer)
+                    }
+                })
+                setOffers(ownerArr)
             })
     }, []);
 
 
-    console.log(offers)
-   
-    const filteredData = offers.filter(offer => 
-        offer._ownerid === userId
-        return )
-
-    console.log(filteredData)
-
-
+    // console.log(offers)
 
 
     return (
-        <></>
-        // < div className="card" >
-        //     <h1>{user.email}</h1>
+        <div className="profile">
+            < div className="card" >
+                <h1>{user.email}</h1>
 
-        //     <h1>Your Offers</h1>
-        //     <div className="your_items">
-        //         <div className="item_box">
-        //             <figure>
-        //                 <img src={offer.imageUrl} width="300" height="200" alt="img" />
-        //             </figure>
-        //             {/* {
-        //                 filteredData.map(x =>
-        //                     <OfferItem key={x._id} {...x} />
-        //                 )
-        //             }
-        //             {
-        //                 filteredData.length === 0 || filteredData === null && (
-        //                     <h3 className="no-articles">No articles yet</h3>
-        //                 )
-        //             } */}
-        //         </div>
-        //     </div >
-        // </div >
-
+                <h1>Your Offers</h1>
+                <div className="your_items">
+                    <div className="item_box">
+                        {
+                            offers.map(x =>
+                                <OfferItem key={x._id} {...x} />
+                            )
+                        }
+                        {
+                            offers.length === 0 && (
+                                <h3 className="no-articles">No articles yet</h3>
+                            )
+                        }
+                    </div>
+                </div >
+            </div >
+        </div>
     )
 }

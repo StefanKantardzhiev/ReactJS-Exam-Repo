@@ -2,9 +2,10 @@
 @import url(https://fonts.googleapis.com/css?family=Rancho);
 
 
-*{
+* {
     box-sizing: border-box;
 }
+
 body {
     width: 100%;
     margin: 0;
@@ -14,8 +15,8 @@ body {
 }
 
 #main-content {
-    margin:auto;
-    
+    margin: auto;
+
 }
 
 /* navigation */
@@ -160,7 +161,7 @@ section#welcome-world {
     background-color: black;
     grid-template-columns: 20% 20% 20%;
     gap: 100px;
-    margin-bottom:100px;
+    margin-bottom: 100px;
 }
 
 
@@ -356,7 +357,7 @@ input[type="email"] {
 .field>span {
     display: block;
     width: 50%;
-    margin:auto;
+    margin: auto;
     text-align: center;
     font-size: 18px;
     text-decoration: none;
@@ -530,7 +531,7 @@ input[type="email"] {
 /* Profile */
 
 /* Likes */
-.likes{
+.likes {
     margin: auto;
     display: block;
     width: 50%;
@@ -540,27 +541,45 @@ input[type="email"] {
 
 /* errors */
 .errors-container {
-    margin:auto;
+    margin: auto;
     width: 80%;
     text-align: center;
     background-color: #af0000;
     border-radius: 60px;
-    padding:5px;
+    padding: 5px;
     /* box-shadow: inset 0px 0px 20px 10px #ff0000; */
 }
-.errors{
+
+.errors {
 
     color: white;
     font-size: 20px;
 }
 
 
-.card{
-    background-color: wheat;
+.card {
+    color:white;
     text-align: center;
     margin: auto;
     display: block;
     width: 80%;
+}
+
+
+/* Profile */
+
+
+.profile {
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+
+.profile .allOffers {
+    color:#161618;
+    display: inline-block;
+    width: 30%;
+    margin: 30px;
 }
 
 @keyframes slideIn {
