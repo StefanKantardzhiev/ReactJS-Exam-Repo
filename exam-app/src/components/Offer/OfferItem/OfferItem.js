@@ -1,11 +1,4 @@
-import { Link, useParams } from "react-router-dom";
-import { commentServiceFactory } from '../../../services/commentService'
-
-import { useState, useEffect } from "react";
-
-import { AddComment } from './AddComment'
-
-
+import { Link } from "react-router-dom";
 
 export const OfferItem = ({
     _id,
@@ -16,9 +9,6 @@ export const OfferItem = ({
     description
 }) => {
 
-    const commentService = commentServiceFactory()
-
-  
 
     return (
         <>
@@ -29,7 +19,6 @@ export const OfferItem = ({
 
                 <blockquote>"{description}"</blockquote>
                 <h1>Price: {price} EUR</h1>
-                {/* <Link to={`/offers/${_id}/edit`} className="button">Edit</Link>*/}
                 <Link to={`/offers/${_id}`} className="button">Details</Link>
             </div>
         </>

@@ -42,10 +42,40 @@ const getRecent = async () => {
     return offers
 }
 
-const getOffersByOwner = async () => {
-    const offers = await Offer.find({}).sort({ _ownerId: -1 });
-    return offers
+// add comment
+
+const addComment = async (comment) => {
+    const offer = await Offer.findById(req.params._id)
+    offer.comments.push(comment)
+
+    offer.save()
+
+    return offer.comments.comment
+
 }
+
+
+const likeOffer = async (offerId, userId) => {
+    const offer = await Offer.findById(offerId)
+    offer.likes.push(userId)
+
+    offer.save()
+    return offer.likes
+
+}
+const dislikeOffer = async (offerId, userId) => {
+    const offer = await Offer.findById(offerId);
+    offer.likes.filter(p => p !== userId);
+    // return photo.save();
+    offer.save();
+    return photo.likes;
+}
+
+
+// const getOffersByOwner = async () => {
+//     const offers = await Offer.find({}).sort({ _ownerId: -1 });
+//     return offers
+// }
 
 
 module.exports = {
@@ -55,5 +85,6 @@ module.exports = {
     updateOffer,
     deleteOffer,
     getRecent,
-    getOffersByOwner
+    addComment,
+    likeOffer,
 }

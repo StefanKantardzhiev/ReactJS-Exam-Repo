@@ -1,17 +1,13 @@
 import { useEffect, useState, useReducer, useContext } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-// import * as commentService from '../../services/commentService';
-// import { useService } from '../../hooks
 import { AuthContext } from '../../contexts/AuthContext'
-import { AddComment } from '../Offer/OfferItem/AddComment'
-// import { gameReducer } from '../../reducers/gameReducer';
 import { offerServiceFactory } from '../../services/offerService';
-import { commentServiceFactory } from '../../services/commentService';
 
 
 
 
-export const OfferDetails = ({ offers }) => {
+
+export const OfferDetails = () => {
 
     const { offerId } = useParams()
 
@@ -19,8 +15,10 @@ export const OfferDetails = ({ offers }) => {
     const user = context.user
 
     const [offer, setOffer] = useState([])
-    const [items, setItems] = useState(offers)
-    const [comments, setComments] = useState("")
+    const [likes, setLikes] = useState([]);
+    const [isLiked, setIsLiked] = useState(undefined);
+
+
     const navigate = useNavigate()
     const offerService = offerServiceFactory()
 
@@ -28,31 +26,52 @@ export const OfferDetails = ({ offers }) => {
         offerService.getOne(offerId)
             .then(data => {
                 setOffer(data)
+                setLikes(data.likes)
+                setIsLiked(data.likes.includes(user._id));
             })
-    }, [offers]);
+    }, []);
 
 
+    // useEffect(() => {
+    //     offerService.getOne(offerId)
+    //         .then(data => {
+    //             data.comments = setComment(comment)
+    //             console.log(data)
+    //         })
+    // }, [offers]);
 
-    const changeHandler = (e) => {
-        setComments(e.target.value);
-        console.log(comments)
-    };
-    
+    // const changeHandler = (e) => {
+    //     setComment(e.target.value);
+
+    // };
+
     const isOwner = offer._ownerId === user._id;
+    const token = user.accessToken
+
+
     const onDeleteClick = async () => {
         await offerService.delete(offer._id);
         navigate('/offers');
     }
 
-    
 
 
-    const commentService = commentServiceFactory()
+    const onLike = async (e) => {
+        e.preventDefault();
+        try {
+            offerService.likeOffer(offer._id, token)
+                .then(data => {
+                    setLikes(data);
 
-    const onCommentSubmit = async (commentId, values) => {
-        await commentService.create(commentId, values.comment);
+                })
+            navigate(`/offers`)
+        } catch (error) {
+            console.log(error.message);
+        }
     }
 
+
+    const offerLikes = offer.likes
 
     return (
         <section id="offer-details">
@@ -69,13 +88,27 @@ export const OfferDetails = ({ offers }) => {
                             <Link to={`/offers/${offer._id}/edit`} className="button">Edit</Link>
                             <button className="button" onClick={onDeleteClick}>Delete</button>
                         </div>
+
                     )}
+                    {!isOwner && !isLiked && (
+                        <>
+                            <button className="button" type="submit" onClick={onLike}>Like</button>
 
+                        </>)}
+                    <span className="likes">Likes: {likes.length}</span>
                 </div>
-
-                <AddComment onCommentSubmit={onCommentSubmit} changeHandler={changeHandler} />
-                {/* {isAuthenticated && <AddComment onCommentSubmit={onCommentSubmit} />} */}
             </div>
-        </section>
+            {/* <article className="create-comment">
+                    <label>Add new comment:</label>
+                    <form className="form" onSubmit={onSubmitHandler}>
+                        <textarea name="comment" placeholder="Comment......" value={comment} onChange={changeHandler}></textarea>
+                        <input className="btn submit" type="submit" value="Add Comment" />
+                    </form>
+                </article> */}
+            {/* {offerLikes.includes('user._id')} */}
+
+            {/* {isAuthenticated && <AddComment onCommentSubmit={onCommentSubmit} />} */}
+
+        </section >
     );
 };

@@ -1,6 +1,6 @@
 const User = require('../models/User');
 
-const { addOffer, getAll, getRecent, getOfferById, updateOffer, deleteOffer, getOffersByOwner } = require('../services/offerService');
+const { addOffer, getAll, getRecent, getOfferById, updateOffer, deleteOffer, addComment, likeOffer } = require('../services/offerService');
 const { updateUserOffers } = require('../services/userService');
 
 const offerController = require('express').Router();
@@ -90,6 +90,32 @@ offerController.delete('/:id', async (req, res) => {
         res.status(204).end()
     } catch (err) {
         res.status(400).json({ err: err.message })
+    }
+});
+
+
+offerController.get('/:id/comment', async (req, res) => {
+    const data = req.body
+    try {
+
+        await addComment(data.comment)
+        res.status(204).end()
+    } catch (err) {
+        res.status(400).json({ err: err.message })
+    }
+})
+
+
+offerController.get('/:id/like', async (req, res) => {
+    try {
+        const offer = await getOfferById(req.params.id);
+        if (offer._ownerId._id != req?.user?._id && offer.likes.map(p => p.includes(req?.user?._id) == false)) {
+            const likes = await likeOffer(req.params.id, req?.user?._id)
+            return likes;
+        }
+        return res.status(200).json(offer);
+    } catch (error) {
+        return error;
     }
 });
 

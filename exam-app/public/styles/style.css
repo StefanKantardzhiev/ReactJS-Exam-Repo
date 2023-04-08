@@ -211,7 +211,7 @@ h1#all-offers {
 }
 
 .allOffers>h2 {
-    width: 50%;
+    width: 70%;
     overflow: hidden;
     font-size: 36px;
     font-weight: 600;
@@ -532,126 +532,13 @@ input[type="email"] {
 
 /* Profile */
 
-
-/* .card {
-    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.2);
-    max-width: 50%;
+/* Likes */
+.likes{
     margin: auto;
-    margin-top: 100px;
-    text-align: center;
-
+    display: block;
+    width: 50%;
+    font-size: 30px;
 }
-
-.title {
-    color: rgb(255, 255, 255) 25%;
-    margin-top: 10px;
-    font-size: 20px;
-}
-
-button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-}
-
-a {
-    text-decoration: none;
-    font-size: 22px;
-    color: rgb(70, 1, 110) 25%;
-
-}
-
-button:hover,
-a:hover {
-    opacity: 0.7;
-} */
-
-/* // photos css */
-
-.card>h1 {
-    color:wheat;
-    background-color: white;
-    text-align: center;
-    padding-top: 3%;
-}
-
-.your_items {
-    text-align: center;
-    margin-top: 30px;
-    background-color: #fff;
-    padding: 50px 50px;
-    display: inline-block;
-    justify-content: center;
-    margin-left: 15%;
-    /* // grid-template-columns:  300px 300px 300px; Make the grid smaller than the container */
-
-/* }
-
-.your_items .item_box {
-    text-align: center;
-}
-
-.your_items .item_box figure {
-    margin: 0;
-}
-
-.your_items .item_box img {
-    size: 100px 100px;
-    image-resolution: 100px 100px;
-    border: 7px solid black;
-}
-
-.your_items .item_box h3 {
-    width: 300px;
-    color: white;
-    font-size: 20px;
-    line-height: 20px;
-    background-color: #252525;
-    font-weight: 100px;
-    margin: 0 auto;
-    padding: 10px 0;
-    transition: ease-in all 0.5s;
-    text-decoration: none;
-}
-
-.your_items .item_box a {
-    text-decoration: none;
-    color: white;
-}
-
-.your_items .item_box h2 {
-    margin-top: 20px;
-}
-
-.your_items .item_box p {
-    width: 400px;
-    color: rgb(0, 0, 0);
-    font-size: 15px;
-    line-height: 20px;
-    background-color: white;
-    font-weight: 300;
-    margin: 0 0;
-    padding: 0 0;
-    transition: ease-in all 0.5s;
-}
-
-.your_items .item_box h3:hover {
-    background: rgb(70, 1, 110) 25%;
-    transition: ease-in all 0.5s;
-}
-
-// col-md-4 .margin_bottom1 {
-//     margin-bottom: 10px;
-// } */
-
-
 
 @keyframes slideIn {
     0% {

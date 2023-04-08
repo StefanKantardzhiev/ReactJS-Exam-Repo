@@ -5,7 +5,6 @@ const authController = require('./controllers/authController')
 const cookieParser = require('cookie-parser');
 const { authMiddleware } = require('./middlewares/auth');
 const offerController = require('./controllers/offerController');
-const commentController = require('./controllers/commentController')
 const cookieSecret = process.env.COOKIESECRET || 'SoftUni';
 const connectionString = 'mongodb://127.0.0.1:27017/GermanMechanics';
 
@@ -32,7 +31,6 @@ async function start() {
 
     // app.use('/users');
     app.use('/auth', authController)
-    app.use('/comments', commentController)
     app.use('/offers', offerController);
    
 

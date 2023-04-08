@@ -39,7 +39,31 @@ export const offerServiceFactory = (token) => {
 
         return result;
     };
+    const addComment = (offerId, comment) => {
+        const result = request.post(`${baseUrl}/${offerId}/comment`, { comment })
+        return result
+    }
 
+
+
+    const likeOffer = async (offerId, token) => {
+        try {
+            const response = await fetch(`${baseUrl}/${offerId}/like`, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Authorization': token
+                }
+            });
+            const result = await response.json();
+            console.log(result);
+            return result;
+        } catch (error) {
+            
+            return error;
+        }
+    };
+
+    
     const edit = (offerId, data) => request.put(`${baseUrl}/${offerId}`, data);
 
     const deleteOffer = (offerId) => request.delete(`${baseUrl}/${offerId}`);
@@ -51,6 +75,8 @@ export const offerServiceFactory = (token) => {
         getOne,
         create,
         edit,
+        addComment,
+        likeOffer,
         delete: deleteOffer,
     };
 }

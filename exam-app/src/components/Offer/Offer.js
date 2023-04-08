@@ -2,8 +2,6 @@ import { OfferItem } from "./OfferItem/OfferItem"
 import { useState, useEffect } from "react";
 import { offerServiceFactory } from '../../services/offerService'
 
-import { commentServiceFactory } from '../../services/commentService'
-import { AddComment } from '../Offer/OfferItem/AddComment'
 
 export const Offer = () => {
 
