@@ -2,6 +2,11 @@
 
 GermanMechanics.de
 
+image.png
+
+
+
+
 Single Page App made with React.js as FrontEnd , Node.js Express.js for BackEnd and data is stored in a local DB through MongoDB. 
 
 The app is targeting freelance mechanics with the option to offer their services.
