@@ -2,8 +2,8 @@
 
 GermanMechanics.de
 
-[img](c:/Users/PCbui/Documents/Lightshot/Screenshot_5.png)
 
+![Screenshot_5](https://user-images.githubusercontent.com/103639205/230742537-d80541a8-5359-4429-b71c-fef6025b4461.png)
 
 
 Single Page App made with React.js as FrontEnd , Node.js Express.js for BackEnd and data is stored in a local DB through MongoDB. 
