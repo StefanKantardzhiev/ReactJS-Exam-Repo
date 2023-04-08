@@ -1,7 +1,6 @@
 import { useState, useContext, useEffect } from "react"
 import { AuthContext } from "../../contexts/AuthContext"
 import { offerServiceFactory } from '../../services/offerService'
-import { useParams, useNavigate } from "react-router-dom"
 import { OfferItem } from "../Offer/OfferItem/OfferItem"
 
 
@@ -13,7 +12,7 @@ export const Profile = () => {
     const user = context.user
     const [offers, setOffers] = useState([])
 
-    // const navigate = useNavigate()
+
     const offerService = offerServiceFactory()
 
     useEffect(() => {
@@ -29,8 +28,6 @@ export const Profile = () => {
             })
     }, []);
 
-
-    // console.log(offers)
 
 
     return (

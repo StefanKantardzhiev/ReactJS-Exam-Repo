@@ -13,7 +13,7 @@ export const OfferItem = ({
     return (
         <>
             <div className="allOffers">
-                <img src={imageUrl} />
+                <img src={imageUrl} alt='imageUrl' />
                 <h2>{title}</h2>
                 <h1>{city}</h1>
 

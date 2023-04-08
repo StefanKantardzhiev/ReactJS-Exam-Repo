@@ -1,7 +1,5 @@
-import { Link, useNavigate } from 'react-router-dom';
-import { useContext, useState } from 'react';
-import { useLocalStorage } from '../../hooks/useLocalStorage';
-
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import { offerServiceFactory } from '../../services/offerService'
 
 export const Create = ({ user }) => {
@@ -27,7 +25,7 @@ export const Create = ({ user }) => {
 
     const changeHandler = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
-        setErrors(errors => ({ ...errors, [e.target.name]: false, ["serverErrors"]: false }))
+        setErrors(errors => ({ ...errors, [e.target.name]: false }))
     };
     const offerService = offerServiceFactory();
 
@@ -107,16 +105,16 @@ export const Create = ({ user }) => {
                             </div>}
                     </div>
                     <label htmlFor="leg-title">Offer title:</label>
-                    <input onChange={changeHandler} type="text" id="title" name="title" placeholder="Enter game title..." onBlur={onErrorHandler}/>
+                    <input onChange={changeHandler} type="text" id="title" name="title" placeholder="Enter game title..." onBlur={onErrorHandler} />
 
                     <label htmlFor="category">City:</label>
-                    <input onChange={changeHandler} type="text" id="category" name="city" placeholder="Enter game category..." onBlur={onErrorHandler}/>
+                    <input onChange={changeHandler} type="text" id="category" name="city" placeholder="Enter game category..." onBlur={onErrorHandler} />
 
                     <label htmlFor="levels">Price:</label>
-                    <input onChange={changeHandler} type="number" id="maxLevel" name="price" min="1" placeholder="1" onBlur={onErrorHandler}/>
+                    <input onChange={changeHandler} type="number" id="maxLevel" name="price" min="1" placeholder="1" onBlur={onErrorHandler} />
 
                     <label htmlFor="game-img">Image:</label>
-                    <input onChange={changeHandler} type="text" id="imageUrl" name="imageUrl" placeholder="Upload a photo..." onBlur={onErrorHandler}/>
+                    <input onChange={changeHandler} type="text" id="imageUrl" name="imageUrl" placeholder="Upload a photo..." onBlur={onErrorHandler} />
 
                     <label htmlFor="summary">Description:</label>
                     <textarea name="description" id="summary" onChange={changeHandler} onBlur={onErrorHandler}></textarea>

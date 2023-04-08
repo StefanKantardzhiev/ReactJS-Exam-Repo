@@ -1,4 +1,4 @@
-import { useEffect, useState, useReducer, useContext } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext'
 import { offerServiceFactory } from '../../services/offerService';
@@ -35,7 +35,7 @@ export const OfferDetails = () => {
     // useEffect(() => {
     //     offerService.getOne(offerId)
     //         .then(data => {
-    //             data.comments = setComment(comment)
+    //             setComment(data.comments)
     //             console.log(data)
     //         })
     // }, [offers]);
@@ -91,7 +91,7 @@ export const OfferDetails = () => {
             <h1>Offer Details</h1>
             <div className="info-section">
                 <div className="offer-header">
-                    <img className="offer-img" src={offer.imageUrl} />
+                    <img className="offer-img" src={offer.imageUrl} alt='offer-image' />
                     <h1>{offer.title}</h1>
                     <p className="type">{offer.city}</p>
                     <p className="text">{offer.description}</p>

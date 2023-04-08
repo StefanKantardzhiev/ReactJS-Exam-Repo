@@ -13,7 +13,7 @@ export const EditGame = () => {
         title: '',
         imageUrl: '',
         city: '',
-        price: '',
+        price: Number,
         description: ''
     });
 
@@ -82,8 +82,8 @@ export const EditGame = () => {
         if (e.target.name === 'price') {
             if (e.target.value < 10) {
                 setErrors(errors => ({ ...errors, [e.target.name]: true }));
-            }
         }
+    }
         if (e.target.name === 'imageUrl') {
             if (e.target.value.length < 1) {
                 setErrors(errors => ({ ...errors, [e.target.name]: true }));
@@ -95,6 +95,7 @@ export const EditGame = () => {
                 setErrors(errors => ({ ...errors, [e.target.name]: true }));
             }
         }
+        
     };
 
 
