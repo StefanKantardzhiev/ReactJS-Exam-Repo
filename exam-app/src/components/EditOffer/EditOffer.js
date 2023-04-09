@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { offerServiceFactory } from "../../services/offerService";
 
-export const EditGame = () => {
+export const EditOffer = () => {
 
     const navigate = useNavigate();
     const { offerId } = useParams();
@@ -178,7 +178,7 @@ export const EditGame = () => {
 
                     <label htmlFor="summary">Summary:</label>
                     <textarea name="description" id="summary" value={values.description} onChange={changeHandler} onBlur={onErrorHandler}></textarea>
-                    <input className="btn submit" type="submit" value="Edit Game" />
+                    <input className="btn submit" type="submit" value="Edit Offer" />
 
                 </div>
             </form>

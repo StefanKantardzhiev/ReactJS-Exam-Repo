@@ -105,10 +105,10 @@ export const Create = ({ user }) => {
                             </div>}
                     </div>
                     <label htmlFor="leg-title">Offer title:</label>
-                    <input onChange={changeHandler} type="text" id="title" name="title" placeholder="Enter game title..." onBlur={onErrorHandler} />
+                    <input onChange={changeHandler} type="text" id="title" name="title" placeholder="Enter offer title..." onBlur={onErrorHandler} />
 
                     <label htmlFor="category">City:</label>
-                    <input onChange={changeHandler} type="text" id="category" name="city" placeholder="Enter game category..." onBlur={onErrorHandler} />
+                    <input onChange={changeHandler} type="text" id="category" name="city" placeholder="Enter offer city..." onBlur={onErrorHandler} />
 
                     <label htmlFor="levels">Price:</label>
                     <input onChange={changeHandler} type="number" id="maxLevel" name="price" min="1" placeholder="1" onBlur={onErrorHandler} />
@@ -118,7 +118,7 @@ export const Create = ({ user }) => {
 
                     <label htmlFor="summary">Description:</label>
                     <textarea name="description" id="summary" onChange={changeHandler} onBlur={onErrorHandler}></textarea>
-                    <input className="btn submit" type="submit" value="Create Game" />
+                    <input className="btn submit" type="submit" value="Create Offer" />
                 </div>
             </form>
         </section >

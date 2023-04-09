@@ -177,10 +177,10 @@ section#welcome-world {
 .allOffers>img {
     padding: 10px 20px;
     float: right;
-    border-radius: 20%;
+    border-radius: 50%;
     height: 100px;
     position: relative;
-    width: 100px;
+    width: 130px;
     overflow: hidden;
 }
 
@@ -203,7 +203,7 @@ h1#all-offers {
 .allOffers blockquote {
     margin: auto;
     width: 80%;
-    font-size: 20px;
+    font-size: 30px;
     font-family: Rancho;
     font-style: italic;
     font-weight: 400;
