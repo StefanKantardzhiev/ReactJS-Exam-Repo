@@ -179,9 +179,9 @@ section#welcome-world {
     float: right;
     border-radius: 50%;
     height: 100px;
-    position: relative;
+    /* position: relative; */
     width: 130px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 h1#all-offers {
