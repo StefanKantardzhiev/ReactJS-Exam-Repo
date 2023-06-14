@@ -1,7 +1,5 @@
 # ReactJS-Exam-Repo
 
-GermanMechanics.de
-
 
 ![Screenshot_5](https://user-images.githubusercontent.com/103639205/230742537-d80541a8-5359-4429-b71c-fef6025b4461.png)
 
